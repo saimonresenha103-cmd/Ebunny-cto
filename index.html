@@ -317,89 +317,6 @@
             border: 0;
         }
 
-        /* Game Section */
-        .game-section {
-            padding: 6rem 1rem;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            background: rgba(255, 255, 255, 0.3);
-            border-top: 2px solid rgba(212, 175, 55, 0.3);
-        }
-
-        .game-section h2 {
-            font-size: 3rem;
-            color: var(--text-dark);
-            margin-bottom: 10px;
-        }
-
-        .game-box {
-            background: rgba(255, 255, 255, 0.7);
-            border: 3px dashed var(--primary-gold);
-            border-radius: 30px;
-            padding: 40px;
-            width: 90%;
-            max-width: 600px;
-            margin-top: 30px;
-            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.2);
-            text-align: center;
-        }
-
-        /* Novo Ovo Dourado da Solana Stylizado com CSS */
-        .golden-sol-egg {
-            font-size: 7rem;
-            cursor: pointer;
-            user-select: none;
-            transition: transform 0.1s, filter 0.3s;
-            display: inline-block;
-            background: radial-gradient(circle at 30% 30%, #FFDF00 0%, var(--primary-gold) 60%, var(--secondary-gold) 100%);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-            filter: drop-shadow(0 10px 15px rgba(212, 175, 55, 0.6));
-            position: relative;
-        }
-
-        /* Símbolo '☀️' da Solana Stylizado dentro do ovo */
-        .golden-sol-egg::before {
-            content: '☀️'; /* Usando o símbolo da Solana stylizado */
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            font-size: 4rem;
-            color: #FFFFFF; /* Símbolo branco para contrastar no ovo */
-            opacity: 0.9;
-            filter: drop-shadow(0 0 5px rgba(0,0,0,0.3));
-        }
-
-        /* O caractere base do ovo é '🥚' para a forma */
-        .golden-sol-egg::after {
-            content: '🥚';
-        }
-
-        .golden-sol-egg:active {
-            transform: scale(0.85);
-            filter: drop-shadow(0 5px 10px rgba(212, 175, 55, 0.8));
-        }
-
-        .score-display {
-            font-size: 2.5rem;
-            font-weight: 900;
-            color: var(--primary-gold);
-            margin: 30px 0;
-            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
-        }
-
-        #game-message {
-            color: var(--secondary-gold);
-            font-size: 1.2rem;
-            font-weight: bold;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            height: 25px;
-        }
-
         /* Partners & Logos */
         .partners-section {
             display: flex;
@@ -445,7 +362,7 @@
 
     <section class="hero-section">
         <div class="hero-image-container">
-            <img src="17656.png" class="hero-image" alt="EBUNNY Holding Solana Golden Eggs">
+            <video src="17668.mp4" class="hero-image" autoplay loop muted playsinline></video>
         </div>
         
         <p style="max-width: 700px; font-size: 1.4rem; line-height: 1.8; font-weight: bold;">
@@ -511,8 +428,6 @@
 
     <section class="videos-section">
         <h2>FILL YOUR BAGS WITH GOLD</h2>
-        <p style="font-size: 1.2rem; font-weight: bold;">Watch the wealth unfold. Secure your position and let the golden eggs multiply.</p>
-        
         <div class="video-container">
             <div class="video-wrapper">
                 <video autoplay loop muted playsinline>
@@ -523,11 +438,7 @@
             </div>
 
             <div class="video-wrapper">
-                <img src="17668.mp4" alt="EBUNNY Pumping Golden Eggs">
-                <video autoplay loop muted playsinline>
-                    <source src="17668.mp4" type="video/mp4">
-                    Your browser does not support the video tag.
-                </video>
+                <img src="17656.png" alt="EBUNNY Holding Solana Golden Eggs">
                 <div class="video-caption">HEAVY BAGS LOADED WITH GOLD 🥚✨</div>
             </div>
         </div>
@@ -535,4 +446,64 @@
 
     <section class="chart-section">
         <h2>LIVE CHART</h2>
-        <div class
+        <div class="chart-container">
+            <div id="dexscreener-embed">
+                <iframe src="https://dexscreener.com/solana/2XSSMgjftCwL2xsURjDGZv4FzxZo9Xvx3d5ejrUfXUVm?embed=1&theme=light&trades=0&info=0"></iframe>
+            </div>
+        </div>
+    </section>
+
+    <div class="partners-section">
+        <img src="https://cryptologos.cc/logos/solana-sol-logo.png" alt="Solana" class="partner-logo" title="Solana">
+        <img src="https://cryptologos.cc/logos/raydium-ray-logo.png" alt="Raydium" class="partner-logo" title="Raydium">
+        <img src="https://station.jup.ag/img/jupiter-logo.svg" alt="Jupiter" class="partner-logo" title="Jupiter">
+        <img src="https://dexscreener.com/favicon.png" alt="DexScreener" class="partner-logo" title="DexScreener" style="border-radius: 10px;">
+        <img src="https://www.dextools.io/app/assets/img/logo/dextools.svg" alt="DEXTools" class="partner-logo" title="DEXTools">
+    </div>
+
+    <footer>
+        <p>© 2026 $EBUNNY. All rights reserved.</p>
+        <p>Disclaimer: $EBUNNY is a memecoin created for entertainment and community celebration purposes. Invest responsibly.</p>
+    </footer>
+
+    <div id="music-container">
+        <div id="player"></div>
+    </div>
+
+    <script src="https://www.youtube.com/iframe_api"></script>
+    <script>
+        var player;
+        function onYouTubeIframeAPIReady() {
+            player = new YT.Player('player', {
+                height: '0',
+                width: '0',
+                videoId: 'RiZVjfjgNyY', 
+                playerVars: {
+                    'autoplay': 0,
+                    'loop': 1,
+                    'playlist': 'RiZVjfjgNyY', 
+                    'controls': 0,
+                    'showinfo': 0,
+                    'rel': 0
+                }
+            });
+        }
+
+        function copyCA() {
+            const caText = document.getElementById("contract-address").innerText;
+            navigator.clipboard.writeText(caText).then(() => {
+                alert("$EBUNNY CA copied! Time to buy! 🐰🚀");
+            }).catch(err => {
+                console.error('Error copying CA', err);
+            });
+        }
+
+        document.body.addEventListener('click', function() {
+            if (player && typeof player.playVideo === 'function' && player.getPlayerState() !== 1) {
+                player.playVideo();
+            }
+        }, { once: true });
+    </script>
+</body>
+                </html>
+                
