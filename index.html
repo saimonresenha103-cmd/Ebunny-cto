@@ -1,1 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>$EBUNNY - Celebrate Easter on the Moon!</title>
+    <style>
+        :root {
+            --primary-gold: #FFD700;
+            --secondary-gold: #DAA520;
+            --bg-dark: #121212;
+            --text-light: #f5f5f5;
+            --accent-green: #4CAF50;
+        }
 
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            color: var(--text-light);
+            text-align: center;
+        }
+
+        header {
+            padding: 2rem;
+            background: rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(10px);
+            border-bottom: 2px solid var(--primary-gold);
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            margin: 0;
+            color: var(--primary-gold);
+            text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            color: #a1a1aa;
+            margin-top: 10px;
+        }
+
+        .hero-section {
+            padding: 3rem 1rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .hero-image {
+            max-width: 350px;
+            border-radius: 20px;
+            box-shadow: 0 0 30px rgba(255, 215, 0, 0.3);
+            border: 2px solid var(--primary-gold);
+        }
+
+        .ca-box {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 15px 30px;
+            border-radius: 50px;
+            font-family: monospace;
+            font-size: 1.2rem;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin: 20px 0;
+            border: 1px solid rgba(255, 215, 0, 0.5);
+            word-break: break-all;
+        }
+
+        .btn {
+            background: linear-gradient(45deg, var(--primary-gold), var(--secondary-gold));
+            color: #000;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 25px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 15px rgba(255, 215, 0, 0.6);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .videos-section {
+            padding: 4rem 1rem;
+            background: rgba(0, 0, 0, 0.3);
+        }
+
+        .videos-section h2 {
+            color: var(--primary-gold);
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        .video-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .video-wrapper {
+            background: #000;
+            border-radius: 15px;
+            overflow: hidden;
+            border: 2px solid var(--primary-gold);
+            box-shadow: 0 0 20px rgba(255, 215, 0, 0.2);
+            width: 100%;
+            max-width: 400px;
+        }
+
+        video {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* Game Section */
+        .game-section {
+            padding: 4rem 1rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .game-box {
+            background: rgba(255, 255, 255, 0.05);
+            border: 2px dashed var(--primary-gold);
+            border-radius: 20px;
+            padding: 30px;
+            width: 90%;
+            max-width: 500px;
+            margin-top: 20px;
+        }
+
+        #egg {
+            font-size: 5rem;
+            cursor: pointer;
+            user-select: none;
+            transition: transform 0.1s;
+            display: inline-block;
+            filter: drop-shadow(0 0 10px rgba(255, 215, 0, 0.8));
+        }
+
+        #egg:active {
+            transform: scale(0.9);
+        }
+
+        .score-display {
+            font-size: 2rem;
+            font-weight: bold;
+            color: var(--primary-gold);
+            margin: 20px 0;
+        }
+
+        footer {
+            padding: 2rem;
+            background: #000;
+            color: #666;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>$EBUNNY</h1>
+        <div class="subtitle">The Memecoin that will make your wallet jump for joy this Easter! 🐰🚀</div>
+    </header>
+
+    <section class="hero-section">
+        <img src="17656.png" alt="EBUNNY Holding Solana Golden Eggs" class="hero-image">
+        
+        <p style="max-width: 600px; font-size: 1.2rem; line-height: 1.6;">
+            Community Takeover (CTO)! The fastest bunny on the Solana network has arrived to distribute golden eggs. 
+            Join the CTO and come celebrate Easter aiming for the next big Market Cap!
+        </p>
+
+        <div class="ca-box">
+            <span id="contract-address">2XSSMgjftCwL2xsURjDGZv4FzxZo9Xvx3d5ejrUfXUVm</span>
+            <button class="btn" onclick="copyCA()">Copy CA</button>
+        </div>
+
+        <div class="social-links">
+            <a href="https://twitter.com/i/communities/2030089185969983975" target="_blank" class="btn">X (Twitter) Community</a>
+            <a href="#" class="btn" style="background: #555; cursor: not-allowed;" onclick="event.preventDefault()">Telegram: Coming soon</a>
+        </div>
+    </section>
+
+    <section class="videos-section">
+        <h2>Why invest in $EBUNNY?</h2>
+        <p>Fasten your seatbelts! The race for the golden eggs has already begun.</p>
+        
+        <div class="video-container">
+            <div class="video-wrapper">
+                <video autoplay loop muted playsinline>
+                    <source src="17674.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <div style="padding: 10px; font-weight: bold; background: #111;">Accelerating to the Moon! 🏍️💨</div>
+            </div>
+
+            <div class="video-wrapper">
+                <video autoplay loop muted playsinline>
+                    <source src="17668.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <div style="padding: 10px; font-weight: bold; background: #111;">Harvesting profits this Easter! 🥚✨</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="game-section">
+        <h2>Mine $EBUNNY (Mini-game)</h2>
+        <p>Click the Solana Golden Egg as fast as you can to increase your virtual balance!</p>
+        
+        <div class="game-box">
+            <div id="egg" onclick="mineCoin()">🥚</div>
+            <div class="score-display">Balance: <span id="score">0</span> $EBUNNY</div>
+            <p id="game-message" style="color: var(--accent-green); height: 20px;"></p>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2026 $EBUNNY. All rights reserved.</p>
+        <p>Disclaimer: $EBUNNY is a memecoin created for entertainment and community celebration purposes. Invest responsibly.</p>
+    </footer>
+
+    <script>
+        // Função para copiar o Contrato (CA)
+        function copyCA() {
+            const caText = document.getElementById("contract-address").innerText;
+            navigator.clipboard.writeText(caText).then(() => {
+                alert("$EBUNNY CA copied to clipboard! 🐰🚀");
+            }).catch(err => {
+                console.error('Error copying', err);
+            });
+        }
+
+        // Lógica do Joguinho
+        let score = 0;
+        const messages = [
+            "Good start! Keep clicking!",
+            "Holding the bag! 🎒",
+            "Getting listed on new exchanges! 📈",
+            "On our way to the moon! 🌕",
+            "CTO is pumping! 🔥",
+            "You are a $EBUNNY whale! 🐋"
+        ];
+
+        function mineCoin() {
+            score += 100; // Ganha 100 tokens por clique
+            document.getElementById("score").innerText = score.toLocaleString();
+            
+            // Efeito visual no clique
+            const egg = document.getElementById("egg");
+            egg.style.transform = "scale(1.2)";
+            setTimeout(() => {
+                egg.style.transform = "scale(1)";
+            }, 100);
+
+            // Mensagens dinâmicas baseadas na pontuação
+            const messageEl = document.getElementById("game-message");
+            if(score === 1000) messageEl.innerText = messages[0];
+            if(score === 5000) messageEl.innerText = messages[1];
+            if(score === 15000) messageEl.innerText = messages[2];
+            if(score === 30000) messageEl.innerText = messages[3];
+            if(score === 50000) messageEl.innerText = messages[4];
+            if(score === 100000) messageEl.innerText = messages[5];
+        }
+    </script>
+</body>
+  </html>
+  
