@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -482,14 +483,14 @@
 <body>
 
     <nav class="top-nav">
-        <a href="#" class="nav-btn" onclick="navigateTo(event, 'home')">HOME</a>
-        <a href="#" class="nav-btn" onclick="navigateTo(event, 'earn')">EARN</a>
-        <a href="#" class="nav-btn" onclick="navigateTo(event, 'roadmap')">ROADMAP</a>
-        <a href="#" class="nav-btn" onclick="navigateTo(event, 'tokenomics')">TOKENOMICS</a>
-        <a href="#" class="nav-btn" onclick="navigateTo(event, 'mission')">MISSION</a>
-        <a href="#" class="nav-btn" onclick="event.preventDefault(); alert('Raydium Link coming soon!')">BUY</a>
-        <a href="#" class="nav-btn" onclick="navigateTo(event, 'media')">MEDIA</a>
-        <a href="#" class="nav-btn" onclick="navigateTo(event, 'social')">SOCIAL</a>
+        <a class="nav-btn" onclick="navigateTo('home')">HOME</a>
+        <a class="nav-btn" onclick="navigateTo('earn')">EARN</a>
+        <a class="nav-btn" onclick="navigateTo('roadmap')">ROADMAP</a>
+        <a class="nav-btn" onclick="navigateTo('tokenomics')">TOKENOMICS</a>
+        <a class="nav-btn" onclick="navigateTo('mission')">MISSION</a>
+        <a class="nav-btn" onclick="alert('Raydium Link coming soon!')">BUY</a>
+        <a class="nav-btn" onclick="navigateTo('media')">MEDIA</a>
+        <a class="nav-btn" onclick="navigateTo('social')">SOCIAL</a>
     </nav>
 
     <div id="home-page">
@@ -503,85 +504,4 @@
                 <video src="17668.mp4" class="hero-image" autoplay loop muted playsinline></video>
             </div>
             
-            <p style="max-width: 700px; font-size: 1.4rem; line-height: 1.8; font-weight: bold;">
-                The wait is over! $EBUNNY has officially launched on the Solana network. The golden eggs are multiplying, and the race to the moon has begun. With mint authority revoked and liquidity locked, this is your chance to claim untold riches. Buy now before the Market Cap explodes!
-            </p>
-
-            <div class="ca-box" id="buy-section">
-                <span id="contract-address">2XSSMgjftCwL2xsURjDGZv4FzxZo9Xvx3d5ejrUfXUVm</span>
-                <button class="btn" onclick="copyCA()">Copy CA</button>
-            </div>
-
-            <div class="social-links" id="social">
-                <a href="https://twitter.com/i/communities/2030089185969983975" target="_blank" class="btn">X (Twitter)</a>
-                <a href="#" class="btn" style="background: #EEDC82; cursor: not-allowed;" onclick="event.preventDefault()">Telegram: Coming soon</a>
-                <a href="#" class="btn" style="background: #EEDC82; cursor: not-allowed;" onclick="event.preventDefault()">Instagram: Coming soon</a>
-                <a href="#" class="btn" style="background: #EEDC82; cursor: not-allowed;" onclick="event.preventDefault()">TikTok: Coming soon</a>
-            </div>
-        </section>
-
-        <section id="tokenomics" class="tokenomics-section">
-            <h2>THE ALCHEMY OF $EBUNNY</h2>
-            <div class="tokenomics-grid">
-                <div class="stat-box">
-                    <h3>1,000,000,000</h3>
-                    <p>TOTAL SUPPLY</p>
-                </div>
-                <div class="stat-box">
-                    <h3>0% / 0%</h3>
-                    <p>BUY / SELL TAX</p>
-                </div>
-                <div class="stat-box">
-                    <h3>100%</h3>
-                    <p>LIQUIDITY BURNED</p>
-                </div>
-                <div class="stat-box">
-                    <h3>REVOKED</h3>
-                    <p>MINT AUTHORITY</p>
-                </div>
-            </div>
-        </section>
-
-        <section id="roadmap" class="roadmap-section">
-            <h2>APRIL ROADMAP TO WEALTH</h2>
-            <div class="roadmap-container">
-                <div class="roadmap-card">
-                    <h3>Week 1: The Golden Foundation (Starts April 1st)</h3>
-                    <p>The supply is now fully decentralized and in the hands of the true community. With a rock-solid floor established, we kick off April focusing on aggressive organic growth and welcoming new diamond hands to the empire.</p>
-                </div>
-                <div class="roadmap-card">
-                    <h3>Week 2: The $100K Ascension</h3>
-                    <p>Riding the Solana bullish wave! As SOL runs, the community rallies. Our primary target for this week is smashing through the monumental $100,000 Market Cap barrier.</p>
-                </div>
-                <div class="roadmap-card">
-                    <h3>Week 3: The Easter Marketing Blitz</h3>
-                    <p>Unleashing the war chest. We begin aggressively paying for premium advertising, securing strategic promotions, and dominating conversations across top-tier memecoin groups just in time for Easter.</p>
-                </div>
-                <div class="roadmap-card">
-                    <h3>Week 4: The Imperial Rewards</h3>
-                    <p>The grand finale of the month! Launching the exclusive $EBUNNY NFT collection and hosting massive community giveaways to reward the diamond hands holding the golden eggs.</p>
-                </div>
-            </div>
-        </section>
-
-        <section id="media" class="videos-section">
-            <h2>FILL YOUR BAGS WITH GOLD</h2>
-            <div class="video-container">
-                <div class="video-wrapper">
-                    <video autoplay loop muted playsinline>
-                        <source src="17674.mp4" type="video/mp4">
-                        Your browser does not support the video tag.
-                    </video>
-                    <div class="video-caption">THE RACE FOR WEALTH HAS BEGUN 🏍️💨</div>
-                </div>
-
-                <div class="video-wrapper">
-                    <img src="17656.png" alt="EBUNNY Holding Solana Golden Eggs">
-                    <div class="video-caption">HEAVY BAGS LOADED WITH GOLD 🥚✨</div>
-                </div>
-            </div>
-        </section>
-
-        <section class="chart-section">
-            <h2>LIVE CHART</h2>
-            <div clas
+            <p style="max-width:
