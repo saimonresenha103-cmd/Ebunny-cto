@@ -118,7 +118,7 @@
             gap: 15px;
             justify-content: center;
             margin-top: 30px;
-            flex-wrap: wrap; /* Adicionado para quebrar linha no celular */
+            flex-wrap: wrap; 
         }
 
         .videos-section {
@@ -281,6 +281,11 @@
             font-size: 1rem;
             border-top: 2px solid var(--primary-gold);
         }
+
+        /* YouTube Music Player Invisible */
+        #music-container {
+            display: none;
+        }
     </style>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
 </head>
@@ -359,7 +364,30 @@
         <p>Disclaimer: $EBUNNY is a memecoin created for entertainment and community celebration purposes. Invest responsibly.</p>
     </footer>
 
+    <div id="music-container">
+        <div id="player"></div>
+    </div>
+
+    <script src="https://www.youtube.com/iframe_api"></script>
     <script>
+        // Configuração da música de fundo
+        var player;
+        function onYouTubeIframeAPIReady() {
+            player = new YT.Player('player', {
+                height: '0',
+                width: '0',
+                videoId: 'RiZVjfjgNyY', // ID da música Clams Casino - I'm God
+                playerVars: {
+                    'autoplay': 0,
+                    'loop': 1,
+                    'playlist': 'RiZVjfjgNyY', // Necessário para o loop funcionar
+                    'controls': 0,
+                    'showinfo': 0,
+                    'rel': 0
+                }
+            });
+        }
+
         function copyCA() {
             const caText = document.getElementById("contract-address").innerText;
             navigator.clipboard.writeText(caText).then(() => {
@@ -370,6 +398,8 @@
         }
 
         let score = 0;
+        let musicStarted = false; // Controle para a música
+
         const messages = [
             "Your bags are getting heavier!",
             "Loading up on golden eggs! 🎒",
@@ -380,6 +410,12 @@
         ];
 
         function mineCoin() {
+            // Toca a música no primeiro clique (Burla o bloqueio dos navegadores)
+            if (!musicStarted && player && typeof player.playVideo === 'function') {
+                player.playVideo();
+                musicStarted = true;
+            }
+
             score += 100;
             document.getElementById("score").innerText = score.toLocaleString();
             
@@ -399,4 +435,5 @@
         }
     </script>
 </body>
-</html>
+            </html>
+            
