@@ -62,6 +62,7 @@
             letter-spacing: 0.05em;
             transition: transform 0.2s, box-shadow 0.2s;
             cursor: pointer;
+            display: inline-block;
         }
 
         .nav-btn:hover {
@@ -453,15 +454,15 @@
 <body>
 
     <nav class="top-nav">
-        <a class="nav-btn" onclick="navigateTo('home')">HOME</a>
-        <a class="nav-btn" onclick="navigateTo('earn')">EARN</a>
-        <a class="nav-btn" onclick="navigateTo('roadmap')">ROADMAP</a>
-        <a class="nav-btn" onclick="navigateTo('tokenomics')">TOKENOMICS</a>
-        <a class="nav-btn" onclick="alert('Raydium Link coming soon!')">BUY</a>
-        <a class="nav-btn" onclick="alert('Store opening soon!')">STORE</a>
-        <a class="nav-btn" onclick="navigateTo('media')">MEDIA</a>
-        <a class="nav-btn" onclick="navigateTo('social')">SOCIAL</a>
-        <a class="nav-btn" onclick="alert('Whitepaper in development!')">WHITEPAPER</a>
+        <a href="#" class="nav-btn" onclick="navigateTo(event, 'home')">HOME</a>
+        <a href="#" class="nav-btn" onclick="navigateTo(event, 'earn')">EARN</a>
+        <a href="#" class="nav-btn" onclick="navigateTo(event, 'roadmap')">ROADMAP</a>
+        <a href="#" class="nav-btn" onclick="navigateTo(event, 'tokenomics')">TOKENOMICS</a>
+        <a href="#" class="nav-btn" onclick="event.preventDefault(); alert('Raydium Link coming soon!')">BUY</a>
+        <a href="#" class="nav-btn" onclick="event.preventDefault(); alert('Store opening soon!')">STORE</a>
+        <a href="#" class="nav-btn" onclick="navigateTo(event, 'media')">MEDIA</a>
+        <a href="#" class="nav-btn" onclick="navigateTo(event, 'social')">SOCIAL</a>
+        <a href="#" class="nav-btn" onclick="event.preventDefault(); alert('Whitepaper in development!')">WHITEPAPER</a>
     </nav>
 
     <div id="home-page">
@@ -479,7 +480,7 @@
                 The wait is over! $EBUNNY has officially launched on the Solana network. The golden eggs are multiplying, and the race to the moon has begun. With mint authority revoked and liquidity locked, this is your chance to claim untold riches. Buy now before the Market Cap explodes!
             </p>
 
-            <div class="ca-box" id="buy">
+            <div class="ca-box" id="buy-section">
                 <span id="contract-address">2XSSMgjftCwL2xsURjDGZv4FzxZo9Xvx3d5ejrUfXUVm</span>
                 <button class="btn" onclick="copyCA()">Copy CA</button>
             </div>
@@ -569,11 +570,4 @@
             <h2>THE $EBUNNY CASINO</h2>
             <p style="font-size: 1.2rem; font-weight: bold; color: var(--text-dark); max-width: 800px; margin-bottom: 30px;">
                 Test your luck in our crypto casino! Align the Fortune Bunnies to multiply your wealth. Play for free now, Web3 Wallet integration coming soon!
-            </p>
-            
-            <div class="global-score-board">
-                VIRTUAL BAG: <span id="global-score">1,000</span> $EBUNNY
-            </div>
-
-            <div class="games-grid">
-                <div class="game-b
+  
