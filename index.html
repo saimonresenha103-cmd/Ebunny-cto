@@ -15,12 +15,57 @@
 
         body {
             margin: 0;
-            padding: 0;
+            padding-top: 70px; 
             font-family: 'Playfair Display', serif;
             background: linear-gradient(135deg, var(--bg-white) 0%, var(--bg-sand) 100%);
             color: var(--text-dark);
             text-align: center;
             overflow-x: hidden;
+            scroll-behavior: smooth; 
+        }
+
+        /* MENU DE NAVEGAÇÃO */
+        .top-nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 2px solid rgba(212, 175, 55, 0.5);
+            display: flex;
+            overflow-x: auto;
+            padding: 10px 15px;
+            gap: 15px;
+            z-index: 9999;
+            box-shadow: 0 4px 20px rgba(212, 175, 55, 0.4);
+            align-items: center;
+        }
+
+        .top-nav::-webkit-scrollbar { display: none; }
+        .top-nav { -ms-overflow-style: none; scrollbar-width: none; }
+
+        .nav-btn {
+            background: linear-gradient(45deg, rgba(255, 215, 0, 0.9), rgba(218, 165, 32, 0.9));
+            color: #111;
+            font-family: Arial, sans-serif;
+            font-weight: 900;
+            font-size: 0.85rem;
+            padding: 8px 18px;
+            border-radius: 25px;
+            text-decoration: none;
+            white-space: nowrap;
+            box-shadow: 0 0 12px rgba(255, 215, 0, 0.6);
+            border: 1px solid #FFF;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .nav-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 20px rgba(255, 215, 0, 0.9);
         }
 
         header {
@@ -55,7 +100,6 @@
             flex-direction: column;
             align-items: center;
             gap: 30px;
-            position: relative;
         }
 
         .hero-image-container {
@@ -85,7 +129,6 @@
             border: 2px solid var(--primary-gold);
             word-break: break-all;
             box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
-            color: var(--text-dark);
             font-weight: bold;
         }
 
@@ -121,14 +164,14 @@
             flex-wrap: wrap; 
         }
 
-        /* Tokenomics Section */
+        /* Tokenomics */
         .tokenomics-section {
             padding: 6rem 1rem;
             background: var(--bg-white);
             border-top: 2px solid rgba(212, 175, 55, 0.3);
         }
 
-        .tokenomics-section h2 {
+        .tokenomics-section h2, .roadmap-section h2, .videos-section h2, .chart-section h2, .game-section h2 {
             color: var(--primary-gold);
             font-size: 3.5rem;
             margin-bottom: 40px;
@@ -154,9 +197,7 @@
             transition: transform 0.3s;
         }
 
-        .stat-box:hover {
-            transform: translateY(-10px);
-        }
+        .stat-box:hover { transform: translateY(-10px); }
 
         .stat-box h3 {
             font-size: 2.5rem;
@@ -170,10 +211,9 @@
             color: var(--secondary-gold);
             font-weight: bold;
             margin: 10px 0 0 0;
-            text-transform: uppercase;
         }
 
-        /* Roadmap Section */
+        /* Roadmap */
         .roadmap-section {
             padding: 6rem 1rem;
             background: rgba(255, 255, 255, 0.5);
@@ -182,13 +222,6 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-        }
-
-        .roadmap-section h2 {
-            color: var(--primary-gold);
-            font-size: 3.5rem;
-            margin-bottom: 40px;
-            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
         }
 
         .roadmap-container {
@@ -206,12 +239,6 @@
             padding: 25px;
             text-align: left;
             box-shadow: 0 10px 20px rgba(0,0,0,0.05);
-            transition: 0.3s;
-        }
-
-        .roadmap-card:hover {
-            transform: scale(1.02);
-            box-shadow: 0 15px 30px rgba(212, 175, 55, 0.2);
         }
 
         .roadmap-card h3 {
@@ -228,16 +255,10 @@
             font-weight: 500;
         }
 
-        /* Videos Section */
+        /* Videos */
         .videos-section {
             padding: 6rem 1rem;
             background: rgba(255, 255, 255, 0.4);
-        }
-
-        .videos-section h2 {
-            color: var(--primary-gold);
-            font-size: 3.5rem;
-            margin-bottom: 15px;
         }
 
         .video-container {
@@ -273,19 +294,13 @@
             border-top: 2px solid var(--primary-gold);
         }
 
-        /* Chart Section */
+        /* Chart */
         .chart-section {
             padding: 6rem 1rem;
             display: flex;
             flex-direction: column;
             align-items: center;
             border-top: 2px solid rgba(212, 175, 55, 0.3);
-        }
-
-        .chart-section h2 {
-            font-size: 3.5rem;
-            color: var(--primary-gold);
-            margin-bottom: 30px;
         }
 
         .chart-container {
@@ -298,26 +313,155 @@
             background: var(--bg-white);
         }
 
-        #dexscreener-embed {
+        #dexscreener-embed { position: relative; width: 100%; padding-bottom: 125%; }
+        @media(min-width: 1400px) { #dexscreener-embed { padding-bottom: 65%; } }
+        #dexscreener-embed iframe { position: absolute; width: 100%; height: 100%; top: 0; left: 0; border: 0; }
+
+        /* EARN & CASSINO */
+        .game-section {
+            padding: 6rem 1rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background: rgba(255, 255, 255, 0.5);
+            border-top: 2px solid rgba(212, 175, 55, 0.3);
+        }
+
+        .global-score-board {
+            background: var(--bg-white);
+            border: 4px solid var(--primary-gold);
+            padding: 20px 40px;
+            border-radius: 50px;
+            font-size: 2.5rem;
+            font-weight: 900;
+            color: var(--primary-gold);
+            margin-bottom: 40px;
+            box-shadow: 0 10px 20px rgba(212, 175, 55, 0.2);
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+        }
+
+        .games-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            max-width: 1200px;
+            width: 100%;
+        }
+
+        .game-box {
+            background: var(--bg-white);
+            border: 3px dashed var(--primary-gold);
+            border-radius: 30px;
+            padding: 30px;
+            width: 100%;
+            max-width: 380px;
+            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.2);
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .game-box h3 {
+            font-size: 1.8rem;
+            color: var(--text-dark);
+            margin-top: 0;
+            border-bottom: 2px solid var(--bg-sand);
+            padding-bottom: 10px;
+            width: 100%;
+            text-transform: uppercase;
+        }
+
+        .game-msg {
+            font-size: 1rem;
+            color: #555;
+            font-weight: bold;
+            height: 25px;
+            margin-bottom: 15px;
+        }
+
+        /* FORTUNE BUNNY SLOT MACHINE (ESTILO TIGRINHO) */
+        .slot-machine {
+            background: #1a1a1a;
+            border: 4px solid var(--primary-gold);
+            border-radius: 15px;
+            padding: 15px;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+            width: 90%;
+            margin-bottom: 20px;
+            box-shadow: inset 0 0 20px rgba(0,0,0,0.8);
+        }
+
+        .slot-cell {
+            background: #000;
+            font-size: 3rem;
+            height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 10px;
+            border: 2px solid #333;
+            box-shadow: inset 0 0 10px rgba(255, 215, 0, 0.2);
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+            transition: all 0.1s;
+        }
+
+        .slot-spin-btn {
+            background: linear-gradient(to bottom, #FFDF00, #DAA520);
+            width: 90%;
+            font-size: 1.5rem;
+            padding: 15px;
+            border-radius: 20px;
+            border: 3px solid #FFF;
+            font-weight: 900;
+            color: #111;
+            cursor: pointer;
+            box-shadow: 0 5px 15px rgba(212, 175, 55, 0.6);
+            text-transform: uppercase;
+            transition: 0.2s;
+        }
+
+        .slot-spin-btn:active {
+            transform: scale(0.95);
+            box-shadow: 0 2px 5px rgba(212, 175, 55, 0.6);
+        }
+
+        /* Game 2: Golden Miner (O Clássico) */
+        .golden-sol-egg {
+            font-size: 6rem;
+            cursor: pointer;
+            user-select: none;
+            transition: transform 0.1s;
+            display: inline-block;
+            background: radial-gradient(circle at 30% 30%, #FFDF00 0%, var(--primary-gold) 60%, var(--secondary-gold) 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            filter: drop-shadow(0 10px 15px rgba(212, 175, 55, 0.6));
             position: relative;
-            width: 100%;
-            padding-bottom: 125%;
+            margin: 20px 0;
         }
-
-        @media(min-width: 1400px) {
-            #dexscreener-embed { padding-bottom: 65%; }
-        }
-
-        #dexscreener-embed iframe {
+        .golden-sol-egg::before {
+            content: '☀️';
             position: absolute;
-            width: 100%;
-            height: 100%;
-            top: 0;
-            left: 0;
-            border: 0;
+            top: 50%; left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 3rem; color: #FFFFFF;
+            filter: drop-shadow(0 0 5px rgba(0,0,0,0.3));
         }
+        .golden-sol-egg::after { content: '🥚'; }
+        .golden-sol-egg:active { transform: scale(0.85); }
 
-        /* Partners & Logos */
+        /* Game 3: Lucky Eggs (Copos) */
+        .eggs-container { display: flex; gap: 15px; margin: 20px 0; }
+        .lucky-egg { font-size: 3.5rem; cursor: pointer; transition: transform 0.2s; filter: drop-shadow(0 5px 10px rgba(212, 175, 55, 0.4)); }
+        .lucky-egg:hover { transform: translateY(-10px); }
+
+        /* Partners */
         .partners-section {
             display: flex;
             justify-content: center;
@@ -330,32 +474,30 @@
         }
 
         .partner-logo {
-            height: 50px;
-            width: auto;
-            object-fit: contain;
-            filter: grayscale(100%) opacity(0.7);
-            transition: 0.3s;
+            height: 50px; width: auto; object-fit: contain;
+            filter: grayscale(100%) opacity(0.7); transition: 0.3s;
         }
+        .partner-logo:hover { filter: grayscale(0%) opacity(1); transform: scale(1.1); }
 
-        .partner-logo:hover {
-            filter: grayscale(0%) opacity(1);
-            transform: scale(1.1);
-        }
-
-        footer {
-            padding: 3rem;
-            background: #111;
-            color: #888;
-            font-size: 1rem;
-        }
-
+        footer { padding: 3rem; background: #111; color: #888; font-size: 1rem; }
         #music-container { display: none; }
     </style>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
 </head>
 <body>
 
-    <header>
+    <nav class="top-nav">
+        <a href="#home" class="nav-btn">HOME</a>
+        <a href="#earn" class="nav-btn">EARN</a>
+        <a href="#roadmap" class="nav-btn">ROADMAP</a>
+        <a href="#tokenomics" class="nav-btn">TOKENOMICS</a>
+        <a href="#buy" class="nav-btn" onclick="alert('Raydium Link coming soon!')">BUY</a>
+        <a href="#" class="nav-btn" onclick="alert('Store opening soon!')">STORE</a>
+        <a href="#media" class="nav-btn">MEDIA</a>
+        <a href="#social" class="nav-btn">SOCIAL</a>
+        <a href="#" class="nav-btn" onclick="alert('Whitepaper in development!')">WHITEPAPER</a>
+    </nav>
+
+    <header id="home">
         <h1>$EBUNNY</h1>
         <div class="subtitle">THE GOLDEN ERA IS LIVE. SECURE YOUR BAGS NOW.</div>
     </header>
@@ -369,12 +511,12 @@
             The wait is over! $EBUNNY has officially launched on the Solana network. The golden eggs are multiplying, and the race to the moon has begun. With mint authority revoked and liquidity locked, this is your chance to claim untold riches. Buy now before the Market Cap explodes!
         </p>
 
-        <div class="ca-box">
+        <div class="ca-box" id="buy">
             <span id="contract-address">2XSSMgjftCwL2xsURjDGZv4FzxZo9Xvx3d5ejrUfXUVm</span>
             <button class="btn" onclick="copyCA()">Copy CA</button>
         </div>
 
-        <div class="social-links">
+        <div class="social-links" id="social">
             <a href="https://twitter.com/i/communities/2030089185969983975" target="_blank" class="btn">X (Twitter)</a>
             <a href="#" class="btn" style="background: #EEDC82; cursor: not-allowed;" onclick="event.preventDefault()">Telegram: Coming soon</a>
             <a href="#" class="btn" style="background: #EEDC82; cursor: not-allowed;" onclick="event.preventDefault()">Instagram: Coming soon</a>
@@ -382,7 +524,7 @@
         </div>
     </section>
 
-    <section class="tokenomics-section">
+    <section id="tokenomics" class="tokenomics-section">
         <h2>THE ALCHEMY OF $EBUNNY</h2>
         <div class="tokenomics-grid">
             <div class="stat-box">
@@ -404,7 +546,7 @@
         </div>
     </section>
 
-    <section class="roadmap-section">
+    <section id="roadmap" class="roadmap-section">
         <h2>APRIL ROADMAP TO WEALTH</h2>
         <div class="roadmap-container">
             <div class="roadmap-card">
@@ -426,7 +568,7 @@
         </div>
     </section>
 
-    <section class="videos-section">
+    <section id="media" class="videos-section">
         <h2>FILL YOUR BAGS WITH GOLD</h2>
         <div class="video-container">
             <div class="video-wrapper">
@@ -453,57 +595,46 @@
         </div>
     </section>
 
-    <div class="partners-section">
-        <img src="https://cryptologos.cc/logos/solana-sol-logo.png" alt="Solana" class="partner-logo" title="Solana">
-        <img src="https://cryptologos.cc/logos/raydium-ray-logo.png" alt="Raydium" class="partner-logo" title="Raydium">
-        <img src="https://station.jup.ag/img/jupiter-logo.svg" alt="Jupiter" class="partner-logo" title="Jupiter">
-        <img src="https://dexscreener.com/favicon.png" alt="DexScreener" class="partner-logo" title="DexScreener" style="border-radius: 10px;">
-        <img src="https://www.dextools.io/app/assets/img/logo/dextools.svg" alt="DEXTools" class="partner-logo" title="DEXTools">
-    </div>
+    <section id="earn" class="game-section">
+        <h2>THE $EBUNNY CASINO</h2>
+        <p style="font-size: 1.2rem; font-weight: bold; color: var(--text-dark); max-width: 800px; margin-bottom: 30px;">
+            Test your luck in our crypto casino! Align the Fortune Bunnies to multiply your wealth. Play for free now, Web3 Wallet integration coming soon!
+        </p>
+        
+        <div class="global-score-board">
+            VIRTUAL BAG: <span id="global-score">0</span> $EBUNNY
+        </div>
 
-    <footer>
-        <p>© 2026 $EBUNNY. All rights reserved.</p>
-        <p>Disclaimer: $EBUNNY is a memecoin created for entertainment and community celebration purposes. Invest responsibly.</p>
-    </footer>
-
-    <div id="music-container">
-        <div id="player"></div>
-    </div>
-
-    <script src="https://www.youtube.com/iframe_api"></script>
-    <script>
-        var player;
-        function onYouTubeIframeAPIReady() {
-            player = new YT.Player('player', {
-                height: '0',
-                width: '0',
-                videoId: 'RiZVjfjgNyY', 
-                playerVars: {
-                    'autoplay': 0,
-                    'loop': 1,
-                    'playlist': 'RiZVjfjgNyY', 
-                    'controls': 0,
-                    'showinfo': 0,
-                    'rel': 0
-                }
-            });
-        }
-
-        function copyCA() {
-            const caText = document.getElementById("contract-address").innerText;
-            navigator.clipboard.writeText(caText).then(() => {
-                alert("$EBUNNY CA copied! Time to buy! 🐰🚀");
-            }).catch(err => {
-                console.error('Error copying CA', err);
-            });
-        }
-
-        document.body.addEventListener('click', function() {
-            if (player && typeof player.playVideo === 'function' && player.getPlayerState() !== 1) {
-                player.playVideo();
-            }
-        }, { once: true });
-    </script>
-</body>
-                </html>
+        <div class="games-grid">
+            
+            <div class="game-box" style="max-width: 450px;">
+                <h3 style="color: #B8860B; text-shadow: 0 0 5px rgba(212, 175, 55, 0.5);">FORTUNE BUNNY 🎰</h3>
+                <p class="game-msg" id="msg-slot">Cost: 100 $EBUNNY to Spin</p>
                 
+                <div class="slot-machine">
+                    <div class="slot-cell" id="slot-1">🐰</div>
+                    <div class="slot-cell" id="slot-2">💰</div>
+                    <div class="slot-cell" id="slot-3">🥚</div>
+                    <div class="slot-cell" id="slot-4">🥕</div>
+                    <div class="slot-cell" id="slot-5">🐰</div>
+                    <div class="slot-cell" id="slot-6">🥕</div>
+                    <div class="slot-cell" id="slot-7">💰</div>
+                    <div class="slot-cell" id="slot-8">🥚</div>
+                    <div class="slot-cell" id="slot-9">🐰</div>
+                </div>
+
+                <button class="slot-spin-btn" id="btn-spin" onclick="spinFortuneBunny()">GIRAR / SPIN</button>
+            </div>
+
+            <div class="game-box">
+                <h3>GOLDEN MINER</h3>
+                <p class="game-msg" id="msg-miner">Tap to mine free tokens!</p>
+                <div class="golden-sol-egg" onclick="playMiner()"></div>
+                <button class="btn" style="font-size: 0.9rem;" onclick="playMiner()">MINE (TAP)</button>
+            </div>
+
+            <div class="game-box">
+                <h3>LUCKY EGG</h3>
+                <p class="game-msg" id="msg-lucky">Find the hidden Bunny!</p>
+                <div class="eggs-container">
+                    <div class="lucky-egg" id="egg-1" onclick="playLucky(
