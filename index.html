@@ -61,6 +61,7 @@
             text-transform: uppercase;
             letter-spacing: 0.05em;
             transition: transform 0.2s, box-shadow 0.2s;
+            cursor: pointer;
         }
 
         .nav-btn:hover {
@@ -317,14 +318,14 @@
         @media(min-width: 1400px) { #dexscreener-embed { padding-bottom: 65%; } }
         #dexscreener-embed iframe { position: absolute; width: 100%; height: 100%; top: 0; left: 0; border: 0; }
 
-        /* EARN & CASSINO */
+        /* EARN PÁGINA EXCLUSIVA */
         .game-section {
             padding: 6rem 1rem;
             display: flex;
             flex-direction: column;
             align-items: center;
             background: rgba(255, 255, 255, 0.5);
-            border-top: 2px solid rgba(212, 175, 55, 0.3);
+            min-height: 80vh; 
         }
 
         .global-score-board {
@@ -344,8 +345,6 @@
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            gap: 30px;
-            max-width: 1200px;
             width: 100%;
         }
 
@@ -355,17 +354,16 @@
             border-radius: 30px;
             padding: 30px;
             width: 100%;
-            max-width: 380px;
+            max-width: 500px;
             box-shadow: 0 10px 30px rgba(212, 175, 55, 0.2);
             text-align: center;
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: space-between;
         }
 
         .game-box h3 {
-            font-size: 1.8rem;
+            font-size: 2.2rem;
             color: var(--text-dark);
             margin-top: 0;
             border-bottom: 2px solid var(--bg-sand);
@@ -375,11 +373,11 @@
         }
 
         .game-msg {
-            font-size: 1rem;
+            font-size: 1.1rem;
             color: #555;
             font-weight: bold;
             height: 25px;
-            margin-bottom: 15px;
+            margin-bottom: 20px;
         }
 
         /* FORTUNE BUNNY SLOT MACHINE (ESTILO TIGRINHO) */
@@ -391,15 +389,15 @@
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 10px;
-            width: 90%;
-            margin-bottom: 20px;
+            width: 100%;
+            margin-bottom: 25px;
             box-shadow: inset 0 0 20px rgba(0,0,0,0.8);
         }
 
         .slot-cell {
             background: #000;
-            font-size: 3rem;
-            height: 70px;
+            font-size: 4rem;
+            height: 90px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -413,7 +411,7 @@
         .slot-spin-btn {
             background: linear-gradient(to bottom, #FFDF00, #DAA520);
             width: 90%;
-            font-size: 1.5rem;
+            font-size: 1.8rem;
             padding: 15px;
             border-radius: 20px;
             border: 3px solid #FFF;
@@ -429,37 +427,6 @@
             transform: scale(0.95);
             box-shadow: 0 2px 5px rgba(212, 175, 55, 0.6);
         }
-
-        /* Game 2: Golden Miner (O Clássico) */
-        .golden-sol-egg {
-            font-size: 6rem;
-            cursor: pointer;
-            user-select: none;
-            transition: transform 0.1s;
-            display: inline-block;
-            background: radial-gradient(circle at 30% 30%, #FFDF00 0%, var(--primary-gold) 60%, var(--secondary-gold) 100%);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-            filter: drop-shadow(0 10px 15px rgba(212, 175, 55, 0.6));
-            position: relative;
-            margin: 20px 0;
-        }
-        .golden-sol-egg::before {
-            content: '☀️';
-            position: absolute;
-            top: 50%; left: 50%;
-            transform: translate(-50%, -50%);
-            font-size: 3rem; color: #FFFFFF;
-            filter: drop-shadow(0 0 5px rgba(0,0,0,0.3));
-        }
-        .golden-sol-egg::after { content: '🥚'; }
-        .golden-sol-egg:active { transform: scale(0.85); }
-
-        /* Game 3: Lucky Eggs (Copos) */
-        .eggs-container { display: flex; gap: 15px; margin: 20px 0; }
-        .lucky-egg { font-size: 3.5rem; cursor: pointer; transition: transform 0.2s; filter: drop-shadow(0 5px 10px rgba(212, 175, 55, 0.4)); }
-        .lucky-egg:hover { transform: translateY(-10px); }
 
         /* Partners */
         .partners-section {
@@ -486,155 +453,127 @@
 <body>
 
     <nav class="top-nav">
-        <a href="#home" class="nav-btn">HOME</a>
-        <a href="#earn" class="nav-btn">EARN</a>
-        <a href="#roadmap" class="nav-btn">ROADMAP</a>
-        <a href="#tokenomics" class="nav-btn">TOKENOMICS</a>
-        <a href="#buy" class="nav-btn" onclick="alert('Raydium Link coming soon!')">BUY</a>
-        <a href="#" class="nav-btn" onclick="alert('Store opening soon!')">STORE</a>
-        <a href="#media" class="nav-btn">MEDIA</a>
-        <a href="#social" class="nav-btn">SOCIAL</a>
-        <a href="#" class="nav-btn" onclick="alert('Whitepaper in development!')">WHITEPAPER</a>
+        <a class="nav-btn" onclick="navigateTo('home')">HOME</a>
+        <a class="nav-btn" onclick="navigateTo('earn')">EARN</a>
+        <a class="nav-btn" onclick="navigateTo('roadmap')">ROADMAP</a>
+        <a class="nav-btn" onclick="navigateTo('tokenomics')">TOKENOMICS</a>
+        <a class="nav-btn" onclick="alert('Raydium Link coming soon!')">BUY</a>
+        <a class="nav-btn" onclick="alert('Store opening soon!')">STORE</a>
+        <a class="nav-btn" onclick="navigateTo('media')">MEDIA</a>
+        <a class="nav-btn" onclick="navigateTo('social')">SOCIAL</a>
+        <a class="nav-btn" onclick="alert('Whitepaper in development!')">WHITEPAPER</a>
     </nav>
 
-    <header id="home">
-        <h1>$EBUNNY</h1>
-        <div class="subtitle">THE GOLDEN ERA IS LIVE. SECURE YOUR BAGS NOW.</div>
-    </header>
+    <div id="home-page">
+        <header id="home">
+            <h1>$EBUNNY</h1>
+            <div class="subtitle">THE GOLDEN ERA IS LIVE. SECURE YOUR BAGS NOW.</div>
+        </header>
 
-    <section class="hero-section">
-        <div class="hero-image-container">
-            <video src="17668.mp4" class="hero-image" autoplay loop muted playsinline></video>
-        </div>
-        
-        <p style="max-width: 700px; font-size: 1.4rem; line-height: 1.8; font-weight: bold;">
-            The wait is over! $EBUNNY has officially launched on the Solana network. The golden eggs are multiplying, and the race to the moon has begun. With mint authority revoked and liquidity locked, this is your chance to claim untold riches. Buy now before the Market Cap explodes!
-        </p>
-
-        <div class="ca-box" id="buy">
-            <span id="contract-address">2XSSMgjftCwL2xsURjDGZv4FzxZo9Xvx3d5ejrUfXUVm</span>
-            <button class="btn" onclick="copyCA()">Copy CA</button>
-        </div>
-
-        <div class="social-links" id="social">
-            <a href="https://twitter.com/i/communities/2030089185969983975" target="_blank" class="btn">X (Twitter)</a>
-            <a href="#" class="btn" style="background: #EEDC82; cursor: not-allowed;" onclick="event.preventDefault()">Telegram: Coming soon</a>
-            <a href="#" class="btn" style="background: #EEDC82; cursor: not-allowed;" onclick="event.preventDefault()">Instagram: Coming soon</a>
-            <a href="#" class="btn" style="background: #EEDC82; cursor: not-allowed;" onclick="event.preventDefault()">TikTok: Coming soon</a>
-        </div>
-    </section>
-
-    <section id="tokenomics" class="tokenomics-section">
-        <h2>THE ALCHEMY OF $EBUNNY</h2>
-        <div class="tokenomics-grid">
-            <div class="stat-box">
-                <h3>1,000,000,000</h3>
-                <p>TOTAL SUPPLY</p>
+        <section class="hero-section">
+            <div class="hero-image-container">
+                <video src="17668.mp4" class="hero-image" autoplay loop muted playsinline></video>
             </div>
-            <div class="stat-box">
-                <h3>0% / 0%</h3>
-                <p>BUY / SELL TAX</p>
-            </div>
-            <div class="stat-box">
-                <h3>100%</h3>
-                <p>LIQUIDITY BURNED</p>
-            </div>
-            <div class="stat-box">
-                <h3>REVOKED</h3>
-                <p>MINT AUTHORITY</p>
-            </div>
-        </div>
-    </section>
-
-    <section id="roadmap" class="roadmap-section">
-        <h2>APRIL ROADMAP TO WEALTH</h2>
-        <div class="roadmap-container">
-            <div class="roadmap-card">
-                <h3>Week 1: The Golden Foundation (Starts April 1st)</h3>
-                <p>The supply is now fully decentralized and in the hands of the true community. With a rock-solid floor established, we kick off April focusing on aggressive organic growth and welcoming new diamond hands to the empire.</p>
-            </div>
-            <div class="roadmap-card">
-                <h3>Week 2: The $100K Ascension</h3>
-                <p>Riding the Solana bullish wave! As SOL runs, the community rallies. Our primary target for this week is smashing through the monumental $100,000 Market Cap barrier.</p>
-            </div>
-            <div class="roadmap-card">
-                <h3>Week 3: The Easter Marketing Blitz</h3>
-                <p>Unleashing the war chest. We begin aggressively paying for premium advertising, securing strategic promotions, and dominating conversations across top-tier memecoin groups just in time for Easter.</p>
-            </div>
-            <div class="roadmap-card">
-                <h3>Week 4: The Imperial Rewards</h3>
-                <p>The grand finale of the month! Launching the exclusive $EBUNNY NFT collection and hosting massive community giveaways to reward the diamond hands holding the golden eggs.</p>
-            </div>
-        </div>
-    </section>
-
-    <section id="media" class="videos-section">
-        <h2>FILL YOUR BAGS WITH GOLD</h2>
-        <div class="video-container">
-            <div class="video-wrapper">
-                <video autoplay loop muted playsinline>
-                    <source src="17674.mp4" type="video/mp4">
-                    Your browser does not support the video tag.
-                </video>
-                <div class="video-caption">THE RACE FOR WEALTH HAS BEGUN 🏍️💨</div>
-            </div>
-
-            <div class="video-wrapper">
-                <img src="17656.png" alt="EBUNNY Holding Solana Golden Eggs">
-                <div class="video-caption">HEAVY BAGS LOADED WITH GOLD 🥚✨</div>
-            </div>
-        </div>
-    </section>
-
-    <section class="chart-section">
-        <h2>LIVE CHART</h2>
-        <div class="chart-container">
-            <div id="dexscreener-embed">
-                <iframe src="https://dexscreener.com/solana/2XSSMgjftCwL2xsURjDGZv4FzxZo9Xvx3d5ejrUfXUVm?embed=1&theme=light&trades=0&info=0"></iframe>
-            </div>
-        </div>
-    </section>
-
-    <section id="earn" class="game-section">
-        <h2>THE $EBUNNY CASINO</h2>
-        <p style="font-size: 1.2rem; font-weight: bold; color: var(--text-dark); max-width: 800px; margin-bottom: 30px;">
-            Test your luck in our crypto casino! Align the Fortune Bunnies to multiply your wealth. Play for free now, Web3 Wallet integration coming soon!
-        </p>
-        
-        <div class="global-score-board">
-            VIRTUAL BAG: <span id="global-score">0</span> $EBUNNY
-        </div>
-
-        <div class="games-grid">
             
-            <div class="game-box" style="max-width: 450px;">
-                <h3 style="color: #B8860B; text-shadow: 0 0 5px rgba(212, 175, 55, 0.5);">FORTUNE BUNNY 🎰</h3>
-                <p class="game-msg" id="msg-slot">Cost: 100 $EBUNNY to Spin</p>
-                
-                <div class="slot-machine">
-                    <div class="slot-cell" id="slot-1">🐰</div>
-                    <div class="slot-cell" id="slot-2">💰</div>
-                    <div class="slot-cell" id="slot-3">🥚</div>
-                    <div class="slot-cell" id="slot-4">🥕</div>
-                    <div class="slot-cell" id="slot-5">🐰</div>
-                    <div class="slot-cell" id="slot-6">🥕</div>
-                    <div class="slot-cell" id="slot-7">💰</div>
-                    <div class="slot-cell" id="slot-8">🥚</div>
-                    <div class="slot-cell" id="slot-9">🐰</div>
+            <p style="max-width: 700px; font-size: 1.4rem; line-height: 1.8; font-weight: bold;">
+                The wait is over! $EBUNNY has officially launched on the Solana network. The golden eggs are multiplying, and the race to the moon has begun. With mint authority revoked and liquidity locked, this is your chance to claim untold riches. Buy now before the Market Cap explodes!
+            </p>
+
+            <div class="ca-box" id="buy">
+                <span id="contract-address">2XSSMgjftCwL2xsURjDGZv4FzxZo9Xvx3d5ejrUfXUVm</span>
+                <button class="btn" onclick="copyCA()">Copy CA</button>
+            </div>
+
+            <div class="social-links" id="social">
+                <a href="https://twitter.com/i/communities/2030089185969983975" target="_blank" class="btn">X (Twitter)</a>
+                <a href="#" class="btn" style="background: #EEDC82; cursor: not-allowed;" onclick="event.preventDefault()">Telegram: Coming soon</a>
+                <a href="#" class="btn" style="background: #EEDC82; cursor: not-allowed;" onclick="event.preventDefault()">Instagram: Coming soon</a>
+                <a href="#" class="btn" style="background: #EEDC82; cursor: not-allowed;" onclick="event.preventDefault()">TikTok: Coming soon</a>
+            </div>
+        </section>
+
+        <section id="tokenomics" class="tokenomics-section">
+            <h2>THE ALCHEMY OF $EBUNNY</h2>
+            <div class="tokenomics-grid">
+                <div class="stat-box">
+                    <h3>1,000,000,000</h3>
+                    <p>TOTAL SUPPLY</p>
+                </div>
+                <div class="stat-box">
+                    <h3>0% / 0%</h3>
+                    <p>BUY / SELL TAX</p>
+                </div>
+                <div class="stat-box">
+                    <h3>100%</h3>
+                    <p>LIQUIDITY BURNED</p>
+                </div>
+                <div class="stat-box">
+                    <h3>REVOKED</h3>
+                    <p>MINT AUTHORITY</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="roadmap" class="roadmap-section">
+            <h2>APRIL ROADMAP TO WEALTH</h2>
+            <div class="roadmap-container">
+                <div class="roadmap-card">
+                    <h3>Week 1: The Golden Foundation (Starts April 1st)</h3>
+                    <p>The supply is now fully decentralized and in the hands of the true community. With a rock-solid floor established, we kick off April focusing on aggressive organic growth and welcoming new diamond hands to the empire.</p>
+                </div>
+                <div class="roadmap-card">
+                    <h3>Week 2: The $100K Ascension</h3>
+                    <p>Riding the Solana bullish wave! As SOL runs, the community rallies. Our primary target for this week is smashing through the monumental $100,000 Market Cap barrier.</p>
+                </div>
+                <div class="roadmap-card">
+                    <h3>Week 3: The Easter Marketing Blitz</h3>
+                    <p>Unleashing the war chest. We begin aggressively paying for premium advertising, securing strategic promotions, and dominating conversations across top-tier memecoin groups just in time for Easter.</p>
+                </div>
+                <div class="roadmap-card">
+                    <h3>Week 4: The Imperial Rewards</h3>
+                    <p>The grand finale of the month! Launching the exclusive $EBUNNY NFT collection and hosting massive community giveaways to reward the diamond hands holding the golden eggs.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="media" class="videos-section">
+            <h2>FILL YOUR BAGS WITH GOLD</h2>
+            <div class="video-container">
+                <div class="video-wrapper">
+                    <video autoplay loop muted playsinline>
+                        <source src="17674.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <div class="video-caption">THE RACE FOR WEALTH HAS BEGUN 🏍️💨</div>
                 </div>
 
-                <button class="slot-spin-btn" id="btn-spin" onclick="spinFortuneBunny()">GIRAR / SPIN</button>
+                <div class="video-wrapper">
+                    <img src="17656.png" alt="EBUNNY Holding Solana Golden Eggs">
+                    <div class="video-caption">HEAVY BAGS LOADED WITH GOLD 🥚✨</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="chart-section">
+            <h2>LIVE CHART</h2>
+            <div class="chart-container">
+                <div id="dexscreener-embed">
+                    <iframe src="https://dexscreener.com/solana/2XSSMgjftCwL2xsURjDGZv4FzxZo9Xvx3d5ejrUfXUVm?embed=1&theme=light&trades=0&info=0"></iframe>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <div id="earn-page" style="display: none;">
+        <section class="game-section">
+            <h2>THE $EBUNNY CASINO</h2>
+            <p style="font-size: 1.2rem; font-weight: bold; color: var(--text-dark); max-width: 800px; margin-bottom: 30px;">
+                Test your luck in our crypto casino! Align the Fortune Bunnies to multiply your wealth. Play for free now, Web3 Wallet integration coming soon!
+            </p>
+            
+            <div class="global-score-board">
+                VIRTUAL BAG: <span id="global-score">1,000</span> $EBUNNY
             </div>
 
-            <div class="game-box">
-                <h3>GOLDEN MINER</h3>
-                <p class="game-msg" id="msg-miner">Tap to mine free tokens!</p>
-                <div class="golden-sol-egg" onclick="playMiner()"></div>
-                <button class="btn" style="font-size: 0.9rem;" onclick="playMiner()">MINE (TAP)</button>
-            </div>
-
-            <div class="game-box">
-                <h3>LUCKY EGG</h3>
-                <p class="game-msg" id="msg-lucky">Find the hidden Bunny!</p>
-                <div class="eggs-container">
-                    <div class="lucky-egg" id="egg-1" onclick="playLucky(
+            <div class="games-grid">
+                <div class="game-b
