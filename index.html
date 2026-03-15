@@ -24,7 +24,7 @@
             scroll-behavior: smooth; 
         }
 
-        /* MENU DE NAVEGAÇÃO INFALÍVEL */
+        /* MENU DE NAVEGAÇÃO INFALÍVEL COM BOTÕES */
         .top-nav {
             position: fixed;
             top: 0;
@@ -41,6 +41,7 @@
             z-index: 9999;
             box-shadow: 0 4px 20px rgba(212, 175, 55, 0.4);
             align-items: center;
+            -webkit-overflow-scrolling: touch;
         }
 
         .top-nav::-webkit-scrollbar { display: none; }
@@ -61,7 +62,8 @@
             letter-spacing: 0.05em;
             transition: transform 0.2s, box-shadow 0.2s;
             cursor: pointer;
-            user-select: none;
+            outline: none;
+            -webkit-tap-highlight-color: transparent;
             display: inline-block;
         }
 
@@ -486,14 +488,14 @@
 <body>
 
     <nav class="top-nav">
-        <div class="nav-btn" onclick="navigateTo('home')">HOME</div>
-        <div class="nav-btn" onclick="navigateTo('earn')">EARN</div>
-        <div class="nav-btn" onclick="navigateTo('roadmap')">ROADMAP</div>
-        <div class="nav-btn" onclick="navigateTo('tokenomics')">TOKENOMICS</div>
-        <div class="nav-btn" onclick="navigateTo('mission')">MISSION</div>
-        <div class="nav-btn" onclick="alert('Raydium Link coming soon!')">BUY</div>
-        <div class="nav-btn" onclick="navigateTo('media')">MEDIA</div>
-        <div class="nav-btn" onclick="navigateTo('social')">SOCIAL</div>
+        <button type="button" class="nav-btn" onclick="navigateTo('home')">HOME</button>
+        <button type="button" class="nav-btn" onclick="navigateTo('earn')">EARN</button>
+        <button type="button" class="nav-btn" onclick="navigateTo('roadmap')">ROADMAP</button>
+        <button type="button" class="nav-btn" onclick="navigateTo('tokenomics')">TOKENOMICS</button>
+        <button type="button" class="nav-btn" onclick="navigateTo('mission')">MISSION</button>
+        <button type="button" class="nav-btn" onclick="alert('Raydium Link coming soon!')">BUY</button>
+        <button type="button" class="nav-btn" onclick="navigateTo('media')">MEDIA</button>
+        <button type="button" class="nav-btn" onclick="navigateTo('social')">SOCIAL</button>
     </nav>
 
     <div id="home-page">
@@ -518,9 +520,9 @@
 
             <div class="social-links" id="social">
                 <a href="https://twitter.com/i/communities/2030089185969983975" target="_blank" class="btn">X (Twitter)</a>
-                <a class="btn" style="background: #EEDC82; cursor: not-allowed;">Telegram: Coming soon</a>
-                <a class="btn" style="background: #EEDC82; cursor: not-allowed;">Instagram: Coming soon</a>
-                <a class="btn" style="background: #EEDC82; cursor: not-allowed;">TikTok: Coming soon</a>
+                <button type="button" class="btn" style="background: #EEDC82; cursor: not-allowed;">Telegram: Coming soon</button>
+                <button type="button" class="btn" style="background: #EEDC82; cursor: not-allowed;">Instagram: Coming soon</button>
+                <button type="button" class="btn" style="background: #EEDC82; cursor: not-allowed;">TikTok: Coming soon</button>
             </div>
         </section>
 
@@ -581,70 +583,4 @@
 
                 <div class="video-wrapper">
                     <img src="17656.png" alt="EBUNNY Holding Solana Golden Eggs">
-                    <div class="video-caption">HEAVY BAGS LOADED WITH GOLD 🥚✨</div>
-                </div>
-            </div>
-        </section>
-
-        <section class="chart-section">
-            <h2>LIVE CHART</h2>
-            <div class="chart-container">
-                <div id="dexscreener-embed">
-                    <iframe src="https://dexscreener.com/solana/2XSSMgjftCwL2xsURjDGZv4FzxZo9Xvx3d5ejrUfXUVm?embed=1&theme=light&trades=0&info=0"></iframe>
-                </div>
-            </div>
-        </section>
-    </div>
-
-    <div id="earn-page" style="display: none;">
-        <section class="game-section">
-            <h2>THE $EBUNNY CASINO</h2>
-            <p style="font-size: 1.2rem; font-weight: bold; color: var(--text-dark); max-width: 800px; margin-bottom: 30px;">
-                Test your luck in our crypto casino! Align the Fortune Bunnies to multiply your wealth. Play for free now, Web3 Wallet integration coming soon!
-            </p>
-            
-            <div class="global-score-board">
-                VIRTUAL BAG: <span id="global-score">1,000</span> $EBUNNY
-            </div>
-
-            <div class="games-grid">
-                <div class="game-box">
-                    <h3 style="color: #B8860B; text-shadow: 0 0 5px rgba(212, 175, 55, 0.5);">FORTUNE BUNNY 🎰</h3>
-                    <p class="game-msg" id="msg-slot">Cost: 100 $EBUNNY to Spin</p>
-                    
-                    <div class="slot-machine">
-                        <div class="slot-cell" id="slot-1">🐰</div>
-                        <div class="slot-cell" id="slot-2">💰</div>
-                        <div class="slot-cell" id="slot-3">🥚</div>
-                        <div class="slot-cell" id="slot-4">🥕</div>
-                        <div class="slot-cell" id="slot-5">🐰</div>
-                        <div class="slot-cell" id="slot-6">🥕</div>
-                        <div class="slot-cell" id="slot-7">💰</div>
-                        <div class="slot-cell" id="slot-8">🥚</div>
-                        <div class="slot-cell" id="slot-9">🐰</div>
-                    </div>
-
-                    <button class="slot-spin-btn" id="btn-spin" onclick="spinFortuneBunny()">GIRAR / SPIN</button>
-                </div>
-            </div>
-        </section>
-    </div>
-
-    <div id="mission-page" style="display: none;">
-        <section id="mission" class="mission-section">
-            <h2>$EBUNNY EASTER MISSION</h2>
-            <p style="font-size: 1.3rem; font-weight: bold; color: var(--text-dark); max-width: 800px; margin-bottom: 30px;">
-                At $EBUNNY, we believe true wealth is measured by the joy we share. This Easter, we are leveraging our "BAGs" to bring hope to children in needy Brazilian communities, transforming the meme space into a Token of Social Impact.
-            </p>
-            
-            <div class="mission-image-container">
-                <img src="17763.png" alt="$EBUNNY Easter Mission - Levar Alegria" class="mission-image">
-            </div>
-
-            <p style="font-size: 1.2rem; font-weight: bold; color: #555; max-width: 700px; line-height: 1.6;">
-                The community is rallying to distribute Golden Easter Eggs, food bags, and essential supplies. A percentage of our marketing/dev treasury will be used to ensure thousands of children can experience a Happy Easter. We'll be documenting the entire process to show the world the real power of $EBUNNY holders! 🐰💎🥺
-            </p>
-        </section>
-    </div>
-
-    <div
+                    <div class="video-caption">HEAVY BAGS LO
