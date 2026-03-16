@@ -3,199 +3,118 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>$EBUNNY - The Golden Era is Live!</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
+    <title>$EBUNNY - The Golden Era</title>
     <style>
-        :root {
-            --gold-gradient: linear-gradient(135deg, #BF953F, #FCF6BA, #B38728, #FBF5B7, #AA771C);
-            --dark-bg: #0a0a0a;
-            --primary-gold: #D4AF37;
-            --glass: rgba(255, 255, 255, 0.05);
-            --text-gray: #cccccc;
-        }
-
         body {
             margin: 0;
-            padding-top: 80px;
-            font-family: 'Montserrat', sans-serif;
-            background: var(--dark-bg);
-            color: #fff;
-            overflow-x: hidden;
-            scroll-behavior: smooth;
+            font-family: Arial, sans-serif;
+            background-color: #ffffff;
+            color: #333;
+            text-align: center;
         }
 
-        /* PREMIUM NAVIGATION */
-        .top-nav {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            background: rgba(0, 0, 0, 0.95);
-            backdrop-filter: blur(20px);
-            z-index: 9999;
-            display: flex;
-            justify-content: center;
-            padding: 15px 0;
-            border-bottom: 1px solid rgba(212, 175, 55, 0.3);
+        header {
+            padding: 50px 20px;
+            background-color: #f8f9fa;
+            border-bottom: 2px solid #D4AF37;
         }
 
-        .nav-container { display: flex; gap: 15px; padding: 0 20px; overflow-x: auto; }
-        .nav-container::-webkit-scrollbar { display: none; }
-
-        .nav-btn {
-            background: transparent;
-            color: var(--primary-gold);
-            border: 1px solid var(--primary-gold);
-            padding: 10px 20px;
-            border-radius: 4px;
-            font-weight: 700;
-            cursor: pointer;
-            transition: 0.3s;
-            text-transform: uppercase;
-            font-size: 0.75rem;
-            letter-spacing: 1px;
-            white-space: nowrap;
+        h1 {
+            font-size: 3rem;
+            color: #D4AF37;
+            margin: 0;
         }
 
-        .nav-btn:hover { background: var(--gold-gradient); color: #000; }
-
-        /* SECTION STYLING */
-        section { padding: 80px 20px; max-width: 1100px; margin: auto; text-align: center; }
-        .hidden { display: none; }
-        
-        h2 { 
-            font-family: 'Playfair Display', serif; 
-            font-size: clamp(2.5rem, 5vw, 4rem); 
-            background: var(--gold-gradient); 
-            -webkit-background-clip: text; 
-            -webkit-text-fill-color: transparent; 
-            margin-bottom: 40px; 
-            text-transform: uppercase;
+        .container {
+            padding: 20px;
         }
 
-        /* --- HERO SECTION --- */
-        .hero-title { 
-            font-size: clamp(4rem, 12vw, 8rem); 
-            margin: 0; 
-            font-family: 'Playfair Display', serif; 
-            background: var(--gold-gradient); 
-            -webkit-background-clip: text; 
-            -webkit-text-fill-color: transparent; 
-            filter: drop-shadow(0 10px 20px rgba(0,0,0,0.5));
-        }
-
-        .ca-display {
-            background: #111;
-            padding: 20px 30px;
-            border-radius: 15px;
-            border: 1px solid var(--primary-gold);
-            display: inline-flex;
-            align-items: center;
-            gap: 15px;
-            margin-top: 40px;
-            cursor: pointer;
-            word-break: break-all;
-        }
-
-        .hero-vid {
+        .hero-video {
             width: 100%;
             max-width: 500px;
-            border-radius: 30px;
-            border: 3px solid var(--primary-gold);
-            box-shadow: 0 0 30px rgba(212, 175, 55, 0.3);
-            margin-bottom: 30px;
-        }
-
-        /* --- FORTUNE BUNNY CASINO --- */
-        .game-card {
-            max-width: 420px;
-            margin: auto;
-            background: linear-gradient(180deg, #1a1a1a 0%, #000 100%);
-            padding: 40px 30px;
-            border-radius: 50px;
-            border: 3px solid var(--primary-gold);
-            box-shadow: 0 0 60px rgba(212, 175, 55, 0.2);
-        }
-
-        .slot-machine {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 12px;
-            background: #0d0d0d;
-            padding: 25px;
-            border-radius: 25px;
-            border: 1px solid #333;
-            margin: 25px 0;
-        }
-
-        .slot-cell {
-            height: 100px;
-            background: #000;
             border-radius: 15px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 3rem;
-            border: 1px solid #222;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
         }
 
-        .spin-btn {
-            width: 100%;
-            padding: 22px;
-            border-radius: 50px;
-            border: none;
-            background: var(--gold-gradient);
-            font-weight: 900;
-            font-size: 1.3rem;
-            cursor: pointer;
-            text-transform: uppercase;
-            color: #000;
-            transition: 0.2s;
+        .ca-box {
+            background: #eee;
+            padding: 15px;
+            border-radius: 10px;
+            word-break: break-all;
+            margin: 20px auto;
+            max-width: 400px;
+            font-family: monospace;
+            font-weight: bold;
         }
 
-        .spin-btn:active { transform: scale(0.96); }
-
-        /* --- MISSION SECTION --- */
-        .mission-container {
-            display: grid;
-            grid-template-columns: 1fr 1.2fr;
-            gap: 50px;
-            align-items: center;
-            text-align: left;
-            background: var(--glass);
-            padding: 60px;
-            border-radius: 40px;
-            border: 1px solid rgba(212, 175, 55, 0.1);
-        }
-
-        .mission-img {
-            width: 100%;
+        .btn {
+            background-color: #D4AF37;
+            color: white;
+            padding: 15px 30px;
             border-radius: 25px;
-            border: 2px solid var(--primary-gold);
+            text-decoration: none;
+            font-weight: bold;
+            display: inline-block;
+            margin: 10px;
+            border: none;
+            cursor: pointer;
         }
 
-        .mission-text p { font-size: 1.1rem; line-height: 1.8; color: var(--text-gray); }
-
-        @media (max-width: 850px) {
-            .mission-container { grid-template-columns: 1fr; padding: 30px; }
+        .nav-menu {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            padding: 15px;
+            background: #fff;
+            position: sticky;
+            top: 0;
+            border-bottom: 1px solid #ddd;
+            z-index: 100;
         }
 
-        footer { padding: 40px; opacity: 0.5; font-size: 0.8rem; letter-spacing: 2px; }
+        .nav-link {
+            text-decoration: none;
+            color: #D4AF37;
+            font-weight: bold;
+            font-size: 0.9rem;
+        }
     </style>
 </head>
 <body>
 
-    <nav class="top-nav">
-        <div class="nav-container">
-            <button class="nav-btn" onclick="showPage('home')">Home</button>
-            <button class="nav-btn" onclick="showPage('game')">Casino 🎰</button>
-            <button class="nav-btn" onclick="showPage('mission')">Mission</button>
-            <button class="nav-btn" onclick="window.open('https://t.me/ebunny2026', '_blank')">Telegram</button>
-            <button class="nav-btn" onclick="window.open('https://raydium.io/swap/?inputCurrency=sol&outputCurrency=2XSSMgjftCwL2xsURjDGZv4FzxZo9Xvx3d5ejrUfXUVm', '_blank')">Buy $EBUNNY</button>
-        </div>
+    <nav class="nav-menu">
+        <a href="#home" class="nav-link">HOME</a>
+        <a href="https://t.me/ebunny2026" class="nav-link" target="_blank">TELEGRAM</a>
+        <a href="https://twitter.com/i/communities/2030089185969983975" class="nav-link" target="_blank">X/TWITTER</a>
     </nav>
 
-    <div id="page-home">
-        <section>
-            <video src="17668.mp4" class="hero-vid" autoplay loop muted playsinline></video>
-            <h1 class="hero-title">$EBUNNY</h1>
-            <p style="font-size: 1.4rem; color
+    <div id="home" class="container">
+        <header>
+            <h1>$EBUNNY</h1>
+            <p>The Golden Era of Solana is here.</p>
+        </header>
+
+        <div class="container">
+            <video class="hero-video" autoplay loop muted playsinline>
+                <source src="17668.mp4" type="video/mp4">
+            </video>
+
+            <div class="ca-box">
+                2XSSMgjftCwL2xsURjDGZv4FzxZo9Xvx3d5ejrUfXUVm
+            </div>
+
+            <button class="btn" onclick="copyCA()">COPY CONTRACT</button>
+            <a href="https://t.me/ebunny2026" class="btn" target="_blank" style="background-color: #0088cc;">JOIN TELEGRAM</a>
+        </div>
+    </div>
+
+    <script>
+        function copyCA() {
+            const ca = "2XSSMgjftCwL2xsURjDGZv4FzxZo9Xvx3d5ejrUfXUVm";
+            navigator.clipboard.writeText(ca);
+            alert("Contract Address Copied!");
+        }
+    </script>
+
+</body>
+</html>
