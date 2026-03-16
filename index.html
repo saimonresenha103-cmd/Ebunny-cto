@@ -3,116 +3,225 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>$EBUNNY - The Golden Era</title>
+    <title>$EBUNNY | The Golden Easter on Solana</title>
+    <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Inter:wght@400;700&display=swap" rel="stylesheet">
     <style>
+        :root {
+            --primary: #ffb7c5; /* Rosa Páscoa */
+            --secondary: #ffd700; /* Dourado */
+            --dark: #2d3436;
+            --accent: #a29bfe;
+        }
+
         body {
             margin: 0;
-            font-family: Arial, sans-serif;
-            background-color: #ffffff;
-            color: #333;
-            text-align: center;
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%);
+            color: var(--dark);
+            overflow-x: hidden;
         }
 
-        header {
-            padding: 50px 20px;
-            background-color: #f8f9fa;
-            border-bottom: 2px solid #D4AF37;
-        }
+        h1, h2, h3 { font-family: 'Bungee', cursive; }
 
-        h1 {
-            font-size: 3rem;
-            color: #D4AF37;
-            margin: 0;
-        }
-
-        .container {
-            padding: 20px;
-        }
-
-        .hero-video {
-            width: 100%;
-            max-width: 500px;
-            border-radius: 15px;
+        /* Navbar Flutuante */
+        nav {
+            position: fixed;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(10px);
+            padding: 15px 30px;
+            border-radius: 50px;
+            display: flex;
+            gap: 20px;
+            z-index: 1000;
             box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            border: 2px solid var(--primary);
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: bold;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            transition: 0.3s;
+        }
+
+        nav a:hover { color: var(--primary); }
+
+        /* Hero Section */
+        .hero {
+            padding-top: 120px;
+            text-align: center;
+            background: url('https://www.transparenttextures.com/patterns/cubes.png');
+        }
+
+        .video-container {
+            width: 80%;
+            max-width: 800px;
+            margin: 0 auto;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.2);
+            border: 5px solid var(--secondary);
         }
 
         .ca-box {
-            background: #eee;
+            background: var(--dark);
+            color: white;
             padding: 15px;
             border-radius: 10px;
-            word-break: break-all;
-            margin: 20px auto;
-            max-width: 400px;
-            font-family: monospace;
-            font-weight: bold;
-        }
-
-        .btn {
-            background-color: #D4AF37;
-            color: white;
-            padding: 15px 30px;
-            border-radius: 25px;
-            text-decoration: none;
-            font-weight: bold;
             display: inline-block;
-            margin: 10px;
-            border: none;
-            cursor: pointer;
+            margin-top: 20px;
+            font-family: monospace;
         }
 
-        .nav-menu {
-            display: flex;
-            justify-content: center;
+        /* Roadmap Section */
+        .roadmap {
+            padding: 50px 20px;
+            background: white;
+        }
+
+        .roadmap-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             gap: 15px;
-            padding: 15px;
-            background: #fff;
-            position: sticky;
-            top: 0;
-            border-bottom: 1px solid #ddd;
-            z-index: 100;
+            max-width: 1200px;
+            margin: 0 auto;
         }
 
-        .nav-link {
-            text-decoration: none;
-            color: #D4AF37;
-            font-weight: bold;
-            font-size: 0.9rem;
+        .day-card {
+            background: var(--primary);
+            padding: 15px;
+            border-radius: 15px;
+            color: white;
+            text-align: center;
         }
+
+        /* $EBUNNY Tiger Slot */
+        .game-section {
+            background: var(--secondary);
+            padding: 100px 20px;
+            text-align: center;
+        }
+
+        .slot-machine {
+            background: #444;
+            padding: 40px;
+            border-radius: 30px;
+            display: inline-block;
+            border: 10px solid #d4af37;
+        }
+
+        .reels {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .reel {
+            width: 100px;
+            height: 100px;
+            background: white;
+            border-radius: 10px;
+            font-size: 3rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .spin-btn {
+            background: #ff4757;
+            color: white;
+            border: none;
+            padding: 15px 40px;
+            font-family: 'Bungee';
+            font-size: 1.5rem;
+            border-radius: 10px;
+            cursor: pointer;
+            box-shadow: 0 5px 0 #b33939;
+        }
+
+        .spin-btn:active { transform: translateY(5px); box-shadow: none; }
+
     </style>
 </head>
 <body>
 
-    <nav class="nav-menu">
-        <a href="#home" class="nav-link">HOME</a>
-        <a href="https://t.me/ebunny2026" class="nav-link" target="_blank">TELEGRAM</a>
-        <a href="https://twitter.com/i/communities/2030089185969983975" class="nav-link" target="_blank">X/TWITTER</a>
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#media">Media</a>
+        <a href="#roadmap">Roadmap</a>
+        <a href="#tokenomics">Tokenomics</a>
+        <a href="#whitepaper">Whitepaper</a>
+        <a href="#earn">Earn</a>
     </nav>
 
-    <div id="home" class="container">
-        <header>
-            <h1>$EBUNNY</h1>
-            <p>The Golden Era of Solana is here.</p>
-        </header>
-
-        <div class="container">
-            <video class="hero-video" autoplay loop muted playsinline>
-                <source src="17668.mp4" type="video/mp4">
+    <section class="hero" id="home">
+        <h1>$EBUNNY: The Hunt for Low Cap Gems</h1>
+        <p style="max-width: 600px; margin: 0 auto;">Attention Angel Investors: The Easter Bunny isn't bringing chocolate this year—he's bringing 1000x potential. Join the most hyped fair launch on Solana before the moon mission.</p>
+        
+        <div class="video-container">
+            <video width="100%" autoplay muted loop>
+                <source src="17674.mp4" type="video/mp4">
+                Your browser does not support the video tag.
             </video>
-
-            <div class="ca-box">
-                2XSSMgjftCwL2xsURjDGZv4FzxZo9Xvx3d5ejrUfXUVm
-            </div>
-
-            <button class="btn" onclick="copyCA()">COPY CONTRACT</button>
-            <a href="https://t.me/ebunny2026" class="btn" target="_blank" style="background-color: #0088cc;">JOIN TELEGRAM</a>
         </div>
-    </div>
+
+        <div class="ca-box">
+            CA: 2XSSMgjftCwL2xsURjDGZv4FzxZo9Xvx3d5ejrUfXUVm
+        </div>
+    </section>
+
+    <section class="roadmap" id="roadmap">
+        <h2 style="text-align: center;">25-Day Easter Countdown Roadmap</h2>
+        <div class="roadmap-grid">
+            <div class="day-card"><h3>Day 1-5</h3><p>Community Building & Marketing Push</p></div>
+            <div class="day-card"><h3>Day 6-15</h3><p>DEX Listings & Influencer Partnerships</p></div>
+            <div class="day-card"><h3>Day 16-20</h3><p>$EBUNNY Tiger Game Beta Launch</p></div>
+            <div class="day-card"><h3>Day 21-25</h3><p>The Grand Easter Burn & CEX Listings</p></div>
+        </div>
+    </section>
+
+    <section class="game-section" id="earn">
+        <h2>🎰 $EBUNNY Tiger 🎰</h2>
+        <p>Spin the Easter Reels and win $EBUNNY tokens!</p>
+        
+        <div class="slot-machine">
+            <div class="reels">
+                <div class="reel" id="r1">🐰</div>
+                <div class="reel" id="r2">🥚</div>
+                <div class="reel" id="r3">💰</div>
+            </div>
+            <button class="spin-btn" onclick="spin()">SPIN!</button>
+        </div>
+    </section>
 
     <script>
-        function copyCA() {
-            const ca = "2XSSMgjftCwL2xsURjDGZv4FzxZo9Xvx3d5ejrUfXUVm";
-            navigator.clipboard.writeText(ca);
-            alert("Contract Address Copied!");
+        function spin() {
+            const symbols = ['🐰', '🥚', '💰', '💎', '🥕'];
+            const r1 = document.getElementById('r1');
+            const r2 = document.getElementById('r2');
+            const r3 = document.getElementById('r3');
+
+            let count = 0;
+            const interval = setInterval(() => {
+                r1.innerText = symbols[Math.floor(Math.random() * symbols.length)];
+                r2.innerText = symbols[Math.floor(Math.random() * symbols.length)];
+                r3.innerText = symbols[Math.floor(Math.random() * symbols.length)];
+                count++;
+                if (count > 20) {
+                    clearInterval(interval);
+                    checkWin();
+                }
+            }, 50);
+        }
+
+        function checkWin() {
+            // Lógica simples de alerta
+            alert("Happy Easter! You just tested the $EBUNNY luck!");
         }
     </script>
 
