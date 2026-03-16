@@ -1,544 +1,534 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>$EBUNNY - The Golden Era is Live!</title>
-    <style>
-        :root {
-            --primary-gold: #D4AF37;
-            --secondary-gold: #B8860B;
-            --bg-white: #FFFFFF;
-            --bg-sand: #F5DEB3; 
-            --text-dark: #3E2723; 
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        body {
-            margin: 0;
-            padding-top: 70px; 
-            font-family: 'Playfair Display', serif;
-            background: linear-gradient(135deg, var(--bg-white) 0%, var(--bg-sand) 100%);
-            color: var(--text-dark);
-            text-align: center;
-            overflow-x: hidden;
-            scroll-behavior: smooth; 
-            min-height: 100vh;
-        }
+<title>$EBUNNY - The Golden Era is Live</title>
 
-        /* MENU DE NAVEGAÇÃO */
-        .top-nav {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            border-bottom: 2px solid rgba(212, 175, 55, 0.5);
-            display: flex;
-            overflow-x: auto;
-            padding: 10px 15px;
-            gap: 15px;
-            z-index: 9999;
-            box-shadow: 0 4px 20px rgba(212, 175, 55, 0.4);
-            align-items: center;
-            -webkit-overflow-scrolling: touch;
-        }
+<style>
 
-        .top-nav::-webkit-scrollbar { display: none; }
-        .top-nav { -ms-overflow-style: none; scrollbar-width: none; }
+:root{
+--primary-gold:#D4AF37;
+--secondary-gold:#B8860B;
+--bg-white:#FFFFFF;
+--bg-sand:#F5DEB3;
+--text-dark:#3E2723;
+}
 
-        .nav-btn {
-            background: linear-gradient(45deg, rgba(255, 215, 0, 0.9), rgba(218, 165, 32, 0.9));
-            color: #111;
-            font-family: Arial, sans-serif;
-            font-weight: 900;
-            font-size: 0.85rem;
-            padding: 8px 18px;
-            border-radius: 25px;
-            white-space: nowrap;
-            box-shadow: 0 0 12px rgba(255, 215, 0, 0.6);
-            border: 1px solid #FFF;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            transition: transform 0.2s, box-shadow 0.2s;
-            cursor: pointer;
-            outline: none;
-            -webkit-tap-highlight-color: transparent;
-        }
+body{
+margin:0;
+padding-top:70px;
+font-family:'Playfair Display',serif;
+background:linear-gradient(135deg,var(--bg-white),var(--bg-sand));
+color:var(--text-dark);
+text-align:center;
+scroll-behavior:smooth;
+}
 
-        .nav-btn:active { transform: scale(0.95); }
+/* NAVIGATION */
 
-        header {
-            padding: 3rem;
-            background: rgba(255, 255, 255, 0.6);
-            backdrop-filter: blur(15px);
-            border-bottom: 3px solid var(--primary-gold);
-            position: relative;
-        }
+.top-nav{
+position:fixed;
+top:0;
+width:100%;
+display:flex;
+gap:12px;
+padding:10px;
+overflow-x:auto;
+background:rgba(255,255,255,0.15);
+backdrop-filter:blur(10px);
+border-bottom:2px solid var(--primary-gold);
+z-index:999;
+}
 
-        h1 {
-            font-size: 5rem;
-            margin: 0;
-            color: var(--primary-gold);
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
-            letter-spacing: 0.1em;
-            font-weight: 900;
-        }
+.nav-btn{
+background:linear-gradient(45deg,#FFD700,#DAA520);
+border:none;
+padding:8px 18px;
+border-radius:25px;
+font-weight:900;
+cursor:pointer;
+}
 
-        .subtitle {
-            font-size: 1.5rem;
-            color: var(--text-dark);
-            margin-top: 15px;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            font-weight: bold;
-        }
+header{
+padding:3rem;
+background:rgba(255,255,255,0.6);
+border-bottom:3px solid var(--primary-gold);
+}
 
-        .hero-section {
-            padding: 5rem 1rem;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 30px;
-        }
+h1{
+font-size:4rem;
+color:var(--primary-gold);
+margin:0;
+}
 
-        .hero-image-container {
-            position: relative;
-            max-width: 500px;
-            width: 100%;
-        }
+.subtitle{
+font-size:1.3rem;
+font-weight:bold;
+margin-top:10px;
+}
 
-        .hero-image {
-            width: 100%;
-            border-radius: 30px;
-            box-shadow: 0 15px 35px rgba(212, 175, 55, 0.4);
-            border: 4px solid var(--primary-gold);
-            background: var(--bg-white);
-        }
+.hero-section{
+padding:4rem 1rem;
+display:flex;
+flex-direction:column;
+align-items:center;
+gap:30px;
+}
 
-        .ca-box {
-            background: rgba(255, 255, 255, 0.8);
-            padding: 20px 40px;
-            border-radius: 60px;
-            font-family: monospace;
-            font-size: 1.4rem;
-            display: flex;
-            align-items: center;
-            gap: 20px;
-            margin: 30px 0;
-            border: 2px solid var(--primary-gold);
-            word-break: break-all;
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
-            font-weight: bold;
-        }
+.hero-image{
+width:100%;
+max-width:500px;
+border-radius:25px;
+border:4px solid var(--primary-gold);
+}
 
-        .btn {
-            background: linear-gradient(45deg, var(--primary-gold), #FFDF00, var(--primary-gold));
-            background-size: 200% auto;
-            color: var(--text-dark);
-            border: none;
-            padding: 15px 30px;
-            border-radius: 30px;
-            font-weight: 900;
-            cursor: pointer;
-            transition: 0.5s;
-            text-decoration: none;
-            display: inline-block;
-            font-size: 1.2rem;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            box-shadow: 0 5px 15px rgba(212, 175, 55, 0.4);
-        }
+.ca-box{
+background:white;
+padding:15px 25px;
+border-radius:40px;
+display:flex;
+gap:15px;
+align-items:center;
+border:2px solid var(--primary-gold);
+}
 
-        .btn:hover {
-            background-position: right center;
-            transform: scale(1.05);
-            box-shadow: 0 10px 25px rgba(212, 175, 55, 0.6);
-        }
+.btn{
+background:linear-gradient(45deg,#FFD700,#DAA520);
+border:none;
+padding:12px 22px;
+border-radius:25px;
+font-weight:900;
+cursor:pointer;
+text-decoration:none;
+color:#111;
+}
 
-        .social-links {
-            display: flex;
-            gap: 15px;
-            justify-content: center;
-            margin-top: 30px;
-            flex-wrap: wrap; 
-        }
+.social-links{
+display:flex;
+gap:15px;
+flex-wrap:wrap;
+justify-content:center;
+}
 
-        /* Tokenomics */
-        .tokenomics-section {
-            padding: 6rem 1rem;
-            background: var(--bg-white);
-            border-top: 2px solid rgba(212, 175, 55, 0.3);
-        }
+.social-links img{
+width:18px;
+vertical-align:middle;
+margin-right:5px;
+}
 
-        .tokenomics-section h2, .roadmap-section h2, .videos-section h2, .chart-section h2, .game-section h2, .mission-section h2 {
-            color: var(--primary-gold);
-            font-size: 3.5rem;
-            margin-bottom: 40px;
-            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
-        }
+/* TOKENOMICS */
 
-        .tokenomics-grid {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 30px;
-            max-width: 1000px;
-            margin: 0 auto;
-        }
+.tokenomics-section{
+padding:5rem 1rem;
+background:white;
+}
 
-        .stat-box {
-            background: linear-gradient(135deg, var(--bg-white) 0%, var(--bg-sand) 100%);
-            border: 3px solid var(--primary-gold);
-            border-radius: 20px;
-            padding: 30px;
-            min-width: 200px;
-            box-shadow: 0 10px 20px rgba(212, 175, 55, 0.2);
-            transition: transform 0.3s;
-        }
+.tokenomics-grid{
+display:flex;
+flex-wrap:wrap;
+gap:20px;
+justify-content:center;
+}
 
-        .stat-box h3 { font-size: 2.5rem; color: var(--text-dark); margin: 0; font-weight: 900; }
-        .stat-box p { font-size: 1.1rem; color: var(--secondary-gold); font-weight: bold; margin: 10px 0 0 0; }
+.stat-box{
+border:3px solid var(--primary-gold);
+border-radius:15px;
+padding:20px;
+min-width:180px;
+}
 
-        /* Roadmap */
-        .roadmap-section {
-            padding: 6rem 1rem;
-            background: rgba(255, 255, 255, 0.5);
-            border-top: 2px solid rgba(212, 175, 55, 0.3);
-            border-bottom: 2px solid rgba(212, 175, 55, 0.3);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
+/* ROADMAP */
 
-        .roadmap-container {
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-            max-width: 800px;
-            width: 100%;
-        }
+.roadmap-section{
+padding:5rem 1rem;
+}
 
-        .roadmap-card {
-            background: var(--bg-white);
-            border-left: 8px solid var(--primary-gold);
-            border-radius: 15px;
-            padding: 25px;
-            text-align: left;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
-        }
+.roadmap-card{
+background:white;
+border-left:6px solid var(--primary-gold);
+padding:20px;
+margin:10px auto;
+max-width:700px;
+text-align:left;
+border-radius:10px;
+}
 
-        .roadmap-card h3 { margin: 0 0 10px 0; color: var(--text-dark); font-size: 1.8rem; }
-        .roadmap-card p { margin: 0; color: #555; font-size: 1.2rem; line-height: 1.5; font-weight: 500; }
+/* CHART */
 
-        /* Videos */
-        .videos-section {
-            padding: 6rem 1rem;
-            background: rgba(255, 255, 255, 0.4);
-        }
+.chart-section{
+padding:5rem 1rem;
+}
 
-        .video-container {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 40px;
-            margin-top: 40px;
-        }
+.chart-container{
+max-width:900px;
+margin:auto;
+border:3px solid var(--primary-gold);
+border-radius:20px;
+overflow:hidden;
+}
 
-        .video-wrapper {
-            background: var(--bg-white);
-            border-radius: 20px;
-            overflow: hidden;
-            border: 3px solid var(--primary-gold);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
-            width: 100%;
-            max-width: 450px;
-        }
+#dexscreener-embed{
+position:relative;
+width:100%;
+padding-bottom:120%;
+}
 
-        .video-wrapper video, .video-wrapper img { width: 100%; height: auto; display: block; }
-        .video-caption { padding: 15px; font-weight: bold; background: var(--bg-white); color: var(--text-dark); text-transform: uppercase; border-top: 2px solid var(--primary-gold); }
+#dexscreener-embed iframe{
+position:absolute;
+width:100%;
+height:100%;
+border:0;
+}
 
-        /* Chart */
-        .chart-section {
-            padding: 6rem 1rem;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            border-top: 2px solid rgba(212, 175, 55, 0.3);
-        }
+/* CASINO */
 
-        .chart-container {
-            width: 100%;
-            max-width: 900px;
-            border-radius: 20px;
-            overflow: hidden;
-            border: 4px solid var(--primary-gold);
-            box-shadow: 0 15px 35px rgba(212, 175, 55, 0.3);
-            background: var(--bg-white);
-        }
+.game-section{
+padding:5rem 1rem;
+}
 
-        #dexscreener-embed { position: relative; width: 100%; padding-bottom: 125%; }
-        @media(min-width: 1400px) { #dexscreener-embed { padding-bottom: 65%; } }
-        #dexscreener-embed iframe { position: absolute; width: 100%; height: 100%; top: 0; left: 0; border: 0; }
+.global-score-board{
+font-size:2rem;
+font-weight:bold;
+margin-bottom:30px;
+color:var(--primary-gold);
+}
 
-        /* EARN PÁGINA EXCLUSIVA */
-        .game-section {
-            padding: 6rem 1rem;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            background: rgba(255, 255, 255, 0.5);
-            min-height: 80vh; 
-        }
+.slot-machine{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:10px;
+max-width:300px;
+margin:auto;
+}
 
-        .global-score-board {
-            background: var(--bg-white);
-            border: 4px solid var(--primary-gold);
-            padding: 20px 40px;
-            border-radius: 50px;
-            font-size: 2.5rem;
-            font-weight: 900;
-            color: var(--primary-gold);
-            margin-bottom: 40px;
-            box-shadow: 0 10px 20px rgba(212, 175, 55, 0.2);
-            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
-        }
+.slot-cell{
+font-size:3rem;
+background:black;
+color:white;
+height:80px;
+display:flex;
+align-items:center;
+justify-content:center;
+border-radius:10px;
+}
 
-        .games-grid {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            width: 100%;
-        }
+.slot-spin-btn{
+margin-top:20px;
+font-size:1.5rem;
+padding:10px 30px;
+cursor:pointer;
+}
 
-        .game-box {
-            background: var(--bg-white);
-            border: 3px dashed var(--primary-gold);
-            border-radius: 30px;
-            padding: 30px;
-            width: 100%;
-            max-width: 500px;
-            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.2);
-            text-align: center;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
+/* PARTNERS */
 
-        .game-box h3 {
-            font-size: 2.2rem;
-            color: var(--text-dark);
-            margin-top: 0;
-            border-bottom: 2px solid var(--bg-sand);
-            padding-bottom: 10px;
-            width: 100%;
-            text-transform: uppercase;
-        }
+.partners-section{
+padding:40px;
+display:flex;
+justify-content:center;
+gap:30px;
+flex-wrap:wrap;
+}
 
-        .game-msg { font-size: 1.1rem; color: #555; font-weight: bold; height: 25px; margin-bottom: 20px; }
+.partner-logo{
+height:45px;
+opacity:0.7;
+}
 
-        /* FORTUNE BUNNY SLOT MACHINE */
-        .slot-machine {
-            background: #1a1a1a;
-            border: 4px solid var(--primary-gold);
-            border-radius: 15px;
-            padding: 15px;
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 10px;
-            width: 100%;
-            margin-bottom: 25px;
-            box-shadow: inset 0 0 20px rgba(0,0,0,0.8);
-        }
+.partner-logo:hover{
+opacity:1;
+transform:scale(1.1);
+}
 
-        .slot-cell {
-            background: #000;
-            font-size: 4rem;
-            height: 90px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 10px;
-            border: 2px solid #333;
-            box-shadow: inset 0 0 10px rgba(255, 215, 0, 0.2);
-            text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
-        }
+/* FOOTER */
 
-        .slot-spin-btn {
-            background: linear-gradient(to bottom, #FFDF00, #DAA520);
-            width: 90%;
-            font-size: 1.8rem;
-            padding: 15px;
-            border-radius: 20px;
-            border: 3px solid #FFF;
-            font-weight: 900;
-            color: #111;
-            cursor: pointer;
-            box-shadow: 0 5px 15px rgba(212, 175, 55, 0.6);
-            text-transform: uppercase;
-        }
-        .slot-spin-btn:active { transform: scale(0.95); }
+footer{
+background:#111;
+color:#888;
+padding:40px;
+}
 
-        /* MISSION SECTION */
-        .mission-section {
-            padding: 6rem 1rem;
-            background: rgba(255, 255, 255, 0.6);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            border-top: 2px solid rgba(212, 175, 55, 0.3);
-            border-bottom: 2px solid rgba(212, 175, 55, 0.3);
-        }
-
-        .mission-image-container {
-            max-width: 900px;
-            width: 100%;
-            border-radius: 20px;
-            overflow: hidden;
-            border: 4px solid var(--primary-gold);
-            box-shadow: 0 15px 35px rgba(212, 175, 55, 0.3);
-            background: var(--bg-white);
-            margin-bottom: 30px;
-        }
-        .mission-image { width: 100%; height: auto; display: block; }
-
-        /* Partners */
-        .partners-section {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 30px;
-            flex-wrap: wrap;
-            padding: 4rem 1rem;
-            background: var(--bg-white);
-            border-top: 2px solid var(--primary-gold);
-        }
-        .partner-logo { height: 50px; width: auto; object-fit: contain; filter: grayscale(100%) opacity(0.7); transition: 0.3s; }
-        .partner-logo:hover { filter: grayscale(0%) opacity(1); transform: scale(1.1); }
-
-        footer { padding: 3rem; background: #111; color: #888; font-size: 1rem; }
-        #music-container { display: none; }
-    </style>
+</style>
 </head>
+
 <body>
 
-    <nav class="top-nav">
-        <button class="nav-btn" onclick="openPage('home')">HOME</button>
-        <button class="nav-btn" onclick="openPage('earn')">EARN</button>
-        <button class="nav-btn" onclick="scrollToSection('roadmap')">ROADMAP</button>
-        <button class="nav-btn" onclick="scrollToSection('tokenomics')">TOKENOMICS</button>
-        <button class="nav-btn" onclick="openPage('mission')">MISSION</button>
-        <button class="nav-btn" onclick="alert('Raydium Link coming soon!')">BUY</button>
-        <button class="nav-btn" onclick="scrollToSection('media')">MEDIA</button>
-        <button class="nav-btn" onclick="scrollToSection('social')">SOCIAL</button>
-    </nav>
+<nav class="top-nav">
 
-    <div id="page-home" style="display: block;">
-        <header id="home">
-            <h1>$EBUNNY</h1>
-            <div class="subtitle">THE GOLDEN ERA IS LIVE. SECURE YOUR BAGS NOW.</div>
-        </header>
+<button class="nav-btn" onclick="openPage('home')">HOME</button>
+<button class="nav-btn" onclick="openPage('earn')">CASINO</button>
+<button class="nav-btn" onclick="scrollToSection('roadmap')">ROADMAP</button>
+<button class="nav-btn" onclick="scrollToSection('tokenomics')">TOKENOMICS</button>
+<button class="nav-btn" onclick="scrollToSection('chart')">CHART</button>
+<button class="nav-btn" onclick="scrollToSection('social')">SOCIAL</button>
 
-        <section class="hero-section">
-            <div class="hero-image-container">
-                <video src="17668.mp4" class="hero-image" autoplay loop muted playsinline></video>
-            </div>
-            
-            <p style="max-width: 700px; font-size: 1.4rem; line-height: 1.8; font-weight: bold;">
-                The wait is over! $EBUNNY has officially launched on the Solana network. The golden eggs are multiplying, and the race to the moon has begun. With mint authority revoked and liquidity locked, this is your chance to claim untold riches. Buy now before the Market Cap explodes!
-            </p>
+</nav>
 
-            <div class="ca-box" id="buy-section">
-                <span id="contract-address">2XSSMgjftCwL2xsURjDGZv4FzxZo9Xvx3d5ejrUfXUVm</span>
-                <button class="btn" onclick="copyCA()">Copy CA</button>
-            </div>
+<div id="page-home">
 
-            <div class="social-links" id="social">
-                <a href="https://twitter.com/i/communities/2030089185969983975" target="_blank" class="btn">X (Twitter)</a>
-                <a href="https://t.me/ebunny2026" target="_blank" class="btn"> Telegram </a>
-                <button class="btn" style="background: #EEDC82; cursor: not-allowed;">Instagram: Coming soon</button>
-                <button class="btn" style="background: #EEDC82; cursor: not-allowed;">TikTok: Coming soon</button>
-            </div>
-        </section>
+<header>
 
-        <section id="tokenomics" class="tokenomics-section">
-            <h2>THE ALCHEMY OF $EBUNNY</h2>
-            <div class="tokenomics-grid">
-                <div class="stat-box">
-                    <h3>1,000,000,000</h3>
-                    <p>TOTAL SUPPLY</p>
-                </div>
-                <div class="stat-box">
-                    <h3>0% / 0%</h3>
-                    <p>BUY / SELL TAX</p>
-                </div>
-                <div class="stat-box">
-                    <h3>100%</h3>
-                    <p>LIQUIDITY BURNED</p>
-                </div>
-                <div class="stat-box">
-                    <h3>REVOKED</h3>
-                    <p>MINT AUTHORITY</p>
-                </div>
-            </div>
-        </section>
+<h1>$EBUNNY</h1>
+<div class="subtitle">THE GOLDEN ERA IS LIVE</div>
 
-        <section id="roadmap" class="roadmap-section">
-            <h2>APRIL ROADMAP TO WEALTH</h2>
-            <div class="roadmap-container">
-                <div class="roadmap-card">
-                    <h3>Week 1: The Golden Foundation (Starts April 1st)</h3>
-                    <p>The supply is now fully decentralized and in the hands of the true community. With a rock-solid floor established, we kick off April focusing on aggressive organic growth and welcoming new diamond hands to the empire.</p>
-                </div>
-                <div class="roadmap-card">
-                    <h3>Week 2: The $100K Ascension</h3>
-                    <p>Riding the Solana bullish wave! As SOL runs, the community rallies. Our primary target for this week is smashing through the monumental $100,000 Market Cap barrier.</p>
-                </div>
-                <div class="roadmap-card">
-                    <h3>Week 3: The Easter Marketing Blitz</h3>
-                    <p>Unleashing the war chest. We begin aggressively paying for premium advertising, securing strategic promotions, and dominating conversations across top-tier memecoin groups just in time for Easter.</p>
-                </div>
-                <div class="roadmap-card">
-                    <h3>Week 4: The Imperial Rewards</h3>
-                    <p>The grand finale of the month! Launching the exclusive $EBUNNY NFT collection and hosting massive community giveaways to reward the diamond hands holding the golden eggs.</p>
-                </div>
-            </div>
-        </section>
+</header>
 
-        <section id="media" class="videos-section">
-            <h2>FILL YOUR BAGS WITH GOLD</h2>
-            <div class="video-container">
-                <div class="video-wrapper">
-                    <video autoplay loop muted playsinline>
-                        <source src="17674.mp4" type="video/mp4">
-                    </video>
-                    <div class="video-caption">THE RACE FOR WEALTH HAS BEGUN 🏍️💨</div>
-                </div>
-                <div class="video-wrapper">
-                    <img src="17656.png" alt="EBUNNY Holding Solana Golden Eggs">
-                    <div class="video-caption">HEAVY BAGS LOADED WITH GOLD 🥚✨</div>
-                </div>
-            </div>
-        </section>
+<section class="hero-section">
 
-        <section id="chart" class="chart-section">
-            <h2>LIVE CHART</h2>
-            <div class="chart-container">
-                <div id="dexscreener-embed">
-                    <iframe id="dex-iframe" src="https://dexscreener.com/solana/2XSSMgjftCwL2xsURjDGZv4FzxZo9Xvx3d5ejrUfXUVm?embed=1&theme=light&trades=0&info=0"></iframe>
-                </div>
-            </div>
-        </section>
-    </div>
+<video src="17668.mp4" class="hero-image" autoplay loop muted></video>
 
-    <div id="page-earn" style="display: none;">
-        <section class="game-section">
-            <h2>THE $EBUNNY CASINO</h2>
-            <p style="font-size: 1.2rem; font-weight: bold; color: var(--text-dark); max-width: 800px; margin-bottom: 30px;">
-                Test your luck in our crypto casino! Align the Fortune Bunnies to multiply your wealth. Play for free now, Web3 Wallet integration coming soon!
-            </p>
-            
-            <div class="global-score-board">
-                VIRTUAL BAG: <span id="global-score">1,000</span> $EBUNNY
-            </
+<p style="max-width:700px;font-size:1.2rem;font-weight:bold;">
+$EBUNNY has launched on Solana. Join the golden era and secure your bags before the market cap explodes.
+</p>
+
+<div class="ca-box">
+
+<span id="contract-address">
+2XSSMgjftCwL2xsURjDGZv4FzxZo9Xvx3d5ejrUfXUVm
+</span>
+
+<button class="btn" onclick="copyCA()">Copy CA</button>
+
+</div>
+
+<button class="btn" onclick="copyDonation()">
+Donate to Project
+</button>
+
+<div class="social-links" id="social">
+
+<a class="btn" target="_blank"
+href="https://twitter.com/i/communities/2030089185969983975">
+
+<img src="https://cdn-icons-png.flaticon.com/512/733/733579.png">
+X
+
+</a>
+
+<a class="btn" target="_blank"
+href="https://t.me/ebunny2026">
+
+<img src="https://cdn-icons-png.flaticon.com/512/2111/2111646.png">
+Telegram
+
+</a>
+
+</div>
+
+</section>
+
+<section id="tokenomics" class="tokenomics-section">
+
+<h2>TOKENOMICS</h2>
+
+<div class="tokenomics-grid">
+
+<div class="stat-box">
+<h3>1B</h3>
+<p>SUPPLY</p>
+</div>
+
+<div class="stat-box">
+<h3>0%</h3>
+<p>TAX</p>
+</div>
+
+<div class="stat-box">
+<h3>100%</h3>
+<p>LP BURNED</p>
+</div>
+
+<div class="stat-box">
+<h3>REVOKED</h3>
+<p>MINT</p>
+</div>
+
+</div>
+
+</section>
+
+<section id="roadmap" class="roadmap-section">
+
+<h2>ROADMAP</h2>
+
+<div class="roadmap-card">
+Week 1 — Community growth
+</div>
+
+<div class="roadmap-card">
+Week 2 — $100K Marketcap
+</div>
+
+<div class="roadmap-card">
+Week 3 — Marketing push
+</div>
+
+<div class="roadmap-card">
+Week 4 — NFT launch
+</div>
+
+</section>
+
+<section id="chart" class="chart-section">
+
+<h2>LIVE CHART</h2>
+
+<div class="chart-container">
+
+<div id="dexscreener-embed">
+
+<iframe
+src="https://dexscreener.com/solana/2XSSMgjftCwL2xsURjDGZv4FzxZo9Xvx3d5ejrUfXUVm?embed=1">
+</iframe>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="partners-section">
+
+<img class="partner-logo"
+src="https://cryptologos.cc/logos/solana-sol-logo.png">
+
+<img class="partner-logo"
+src="https://station.jup.ag/img/jupiter-logo.svg">
+
+<img class="partner-logo"
+src="https://cryptologos.cc/logos/raydium-ray-logo.png">
+
+<img class="partner-logo"
+src="https://docs.dexscreener.com/favicon.png">
+
+<img class="partner-logo"
+src="https://www.dextools.io/favicon.ico">
+
+</section>
+
+</div>
+
+<div id="page-earn" style="display:none">
+
+<section class="game-section">
+
+<h2>$EBUNNY CASINO</h2>
+
+<div class="global-score-board">
+
+VIRTUAL BAG:
+<span id="global-score">1000</span> $EBUNNY
+
+</div>
+
+<div class="slot-machine">
+
+<div class="slot-cell">🐰</div>
+<div class="slot-cell">🥚</div>
+<div class="slot-cell">💰</div>
+
+</div>
+
+<button class="slot-spin-btn"
+onclick="spinSlot()">
+SPIN
+</button>
+
+</section>
+
+</div>
+
+<footer>
+
+<p>© 2026 EBUNNY</p>
+
+<p>
+Donation Wallet
+</p>
+
+<p>
+9tBxpF7bmDox7y7JqCeN1HzcGeC6LrfYao27qBgjM2pU
+</p>
+
+</footer>
+
+<script>
+
+function openPage(page){
+
+document.getElementById("page-home").style.display="none";
+document.getElementById("page-earn").style.display="none";
+
+document.getElementById("page-"+page).style.display="block";
+
+window.scrollTo({top:0,behavior:"smooth"});
+
+}
+
+function scrollToSection(id){
+
+document.getElementById(id)
+.scrollIntoView({behavior:"smooth"});
+
+}
+
+function copyCA(){
+
+const ca=document.getElementById("contract-address").innerText;
+
+navigator.clipboard.writeText(ca);
+
+alert("Contract copied");
+
+}
+
+function copyDonation(){
+
+navigator.clipboard.writeText(
+"9tBxpF7bmDox7y7JqCeN1HzcGeC6LrfYao27qBgjM2pU"
+);
+
+alert("Donation wallet copied");
+
+}
+
+const symbols=["🐰","🥚","💰","✨"];
+
+function spinSlot(){
+
+const cells=document.querySelectorAll(".slot-cell");
+
+let results=[];
+
+cells.forEach(cell=>{
+
+const rand=symbols[Math.floor(Math.random()*symbols.length)];
+
+cell.innerText=rand;
+
+results.push(rand);
+
+});
+
+if(results[0]==results[1] && results[1]==results[2]){
+
+let score=parseInt(
+document.getElementById("global-score").innerText
+);
+
+score+=500;
+
+document.getElementById("global-score").innerText=score;
+
+alert("JACKPOT +500 EBUNNY");
+
+}
+
+}
+
+</script>
+
+</body>
+</html>
