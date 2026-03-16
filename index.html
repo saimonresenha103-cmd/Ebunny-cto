@@ -3,8 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>$EBUNNY - The Golden Era is Live! (v0.2)</title>
-    <script src="https://unpkg.com/@solana/web3.js@latest/lib/index.iife.min.js"></script>
+    <title>$EBUNNY - The Golden Era is Live!</title>
     <style>
         :root {
             --primary-gold: #D4AF37;
@@ -306,6 +305,13 @@
             text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
         }
 
+        .games-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            width: 100%;
+        }
+
         .game-box {
             background: var(--bg-white);
             border: 3px dashed var(--primary-gold);
@@ -373,7 +379,6 @@
             text-transform: uppercase;
         }
         .slot-spin-btn:active { transform: scale(0.95); }
-        .slot-spin-btn:disabled { background: #999; cursor: not-allowed; }
 
         /* MISSION SECTION */
         .mission-section {
@@ -413,6 +418,7 @@
         .partner-logo:hover { filter: grayscale(0%) opacity(1); transform: scale(1.1); }
 
         footer { padding: 3rem; background: #111; color: #888; font-size: 1rem; }
+        #music-container { display: none; }
     </style>
 </head>
 <body>
@@ -431,173 +437,108 @@
     <div id="page-home" style="display: block;">
         <header id="home">
             <h1>$EBUNNY</h1>
-            <div class="subtitle">THE GOLDEN ERA IS LIVE.</div>
+            <div class="subtitle">THE GOLDEN ERA IS LIVE. SECURE YOUR BAGS NOW.</div>
         </header>
 
         <section class="hero-section">
-            <video src="17668.mp4" class="hero-image" autoplay loop muted playsinline style="max-width:500px;"></video>
-            <div class="ca-box">
-                <span id="contract-address">2XSSMgjftCwL2xsURjDGZv4FzxZo9Xvx3d5ejrUfXUVm</span>
-                <button class="btn" onclick="copyAddr('2XSSMgjftCwL2xsURjDGZv4FzxZo9Xvx3d5ejrUfXUVm')">Copy CA</button>
+            <div class="hero-image-container">
+                <video src="17668.mp4" class="hero-image" autoplay loop muted playsinline></video>
             </div>
+            
+            <p style="max-width: 700px; font-size: 1.4rem; line-height: 1.8; font-weight: bold;">
+                The wait is over! $EBUNNY has officially launched on the Solana network. The golden eggs are multiplying, and the race to the moon has begun. With mint authority revoked and liquidity locked, this is your chance to claim untold riches. Buy now before the Market Cap explodes!
+            </p>
+
+            <div class="ca-box" id="buy-section">
+                <span id="contract-address">2XSSMgjftCwL2xsURjDGZv4FzxZo9Xvx3d5ejrUfXUVm</span>
+                <button class="btn" onclick="copyCA()">Copy CA</button>
+            </div>
+
             <div class="social-links" id="social">
                 <a href="https://twitter.com/i/communities/2030089185969983975" target="_blank" class="btn">X (Twitter)</a>
-                <button class="btn" style="background: #EEDC82; cursor: not-allowed;">Telegram:  </button>
-            </div>https://t.me/ebunny2026
+                <button class="btn" style="background: #EEDC82; cursor: not-allowed;">Telegram: Coming soon</button>
+                <button class="btn" style="background: #EEDC82; cursor: not-allowed;">Instagram: Coming soon</button>
+                <button class="btn" style="background: #EEDC82; cursor: not-allowed;">TikTok: Coming soon</button>
+            </div>
         </section>
 
         <section id="tokenomics" class="tokenomics-section">
-            <h2>ALCHEMY OF $EBUNNY</h2>
+            <h2>THE ALCHEMY OF $EBUNNY</h2>
             <div class="tokenomics-grid">
-                <div class="stat-box"><h3>1B</h3><p>SUPPLY</p></div>
-                <div class="stat-box"><h3>0%</h3><p>TAX</p></div>
-                <div class="stat-box"><h3>100%</h3><p>BURNED</p></div>
+                <div class="stat-box">
+                    <h3>1,000,000,000</h3>
+                    <p>TOTAL SUPPLY</p>
+                </div>
+                <div class="stat-box">
+                    <h3>0% / 0%</h3>
+                    <p>BUY / SELL TAX</p>
+                </div>
+                <div class="stat-box">
+                    <h3>100%</h3>
+                    <p>LIQUIDITY BURNED</p>
+                </div>
+                <div class="stat-box">
+                    <h3>REVOKED</h3>
+                    <p>MINT AUTHORITY</p>
+                </div>
             </div>
         </section>
 
         <section id="roadmap" class="roadmap-section">
-            <h2>ROADMAP</h2>
+            <h2>APRIL ROADMAP TO WEALTH</h2>
             <div class="roadmap-container">
-                <div class="roadmap-card"><h3>Week 1</h3><p>Foundation & Organic Growth</p></div>
+                <div class="roadmap-card">
+                    <h3>Week 1: The Golden Foundation (Starts April 1st)</h3>
+                    <p>The supply is now fully decentralized and in the hands of the true community. With a rock-solid floor established, we kick off April focusing on aggressive organic growth and welcoming new diamond hands to the empire.</p>
+                </div>
+                <div class="roadmap-card">
+                    <h3>Week 2: The $100K Ascension</h3>
+                    <p>Riding the Solana bullish wave! As SOL runs, the community rallies. Our primary target for this week is smashing through the monumental $100,000 Market Cap barrier.</p>
+                </div>
+                <div class="roadmap-card">
+                    <h3>Week 3: The Easter Marketing Blitz</h3>
+                    <p>Unleashing the war chest. We begin aggressively paying for premium advertising, securing strategic promotions, and dominating conversations across top-tier memecoin groups just in time for Easter.</p>
+                </div>
+                <div class="roadmap-card">
+                    <h3>Week 4: The Imperial Rewards</h3>
+                    <p>The grand finale of the month! Launching the exclusive $EBUNNY NFT collection and hosting massive community giveaways to reward the diamond hands holding the golden eggs.</p>
+                </div>
             </div>
         </section>
 
         <section id="media" class="videos-section">
-            <h2>GOLDEN BAGS</h2>
+            <h2>FILL YOUR BAGS WITH GOLD</h2>
             <div class="video-container">
-                <video src="17674.mp4" style="width:100%; max-width:400px; border-radius:20px;" autoplay loop muted playsinline></video>
+                <div class="video-wrapper">
+                    <video autoplay loop muted playsinline>
+                        <source src="17674.mp4" type="video/mp4">
+                    </video>
+                    <div class="video-caption">THE RACE FOR WEALTH HAS BEGUN 🏍️💨</div>
+                </div>
+                <div class="video-wrapper">
+                    <img src="17656.png" alt="EBUNNY Holding Solana Golden Eggs">
+                    <div class="video-caption">HEAVY BAGS LOADED WITH GOLD 🥚✨</div>
+                </div>
             </div>
         </section>
 
         <section id="chart" class="chart-section">
             <h2>LIVE CHART</h2>
             <div class="chart-container">
-                <iframe id="dex-iframe" src="https://dexscreener.com/solana/2XSSMgjftCwL2xsURjDGZv4FzxZo9Xvx3d5ejrUfXUVm?embed=1&theme=light&trades=0&info=0" style="width:100%; height:600px; border:0;"></iframe>
+                <div id="dexscreener-embed">
+                    <iframe id="dex-iframe" src="https://dexscreener.com/solana/2XSSMgjftCwL2xsURjDGZv4FzxZo9Xvx3d5ejrUfXUVm?embed=1&theme=light&trades=0&info=0"></iframe>
+                </div>
             </div>
         </section>
     </div>
 
     <div id="page-earn" style="display: none;">
         <section class="game-section">
-            <h2>$EBUNNY CASINO</h2>
-            <div id="wallet-display" style="font-weight:900; margin-bottom:10px;">Status: Disconnected</div>
-            <button class="btn" id="connect-btn" onclick="connectWallet()">CONNECT PHANTOM</button>
+            <h2>THE $EBUNNY CASINO</h2>
+            <p style="font-size: 1.2rem; font-weight: bold; color: var(--text-dark); max-width: 800px; margin-bottom: 30px;">
+                Test your luck in our crypto casino! Align the Fortune Bunnies to multiply your wealth. Play for free now, Web3 Wallet integration coming soon!
+            </p>
             
-            <div class="game-box" style="margin-top:20px;">
-                <p id="game-status">Cost: 0.005 SOL per Spin</p>
-                <div class="slot-machine">
-                    <div class="slot-cell" id="s1">🐰</div>
-                    <div class="slot-cell" id="s2">💰</div>
-                    <div class="slot-cell" id="s3">🥚</div>
-                </div>
-                <button class="slot-spin-btn" id="spin-btn" onclick="requestPayment()" disabled>SPIN (0.005 SOL)</button>
-            </div>
-        </section>
-    </div>
-
-    <div id="page-mission" style="display: none;">
-        <section class="mission-section">
-            <h2>EASTER MISSION</h2>
-            <img src="17763.png" class="mission-image">
-            <div style="background:white; padding:20px; border-radius:20px; border:3px solid gold; margin-top:20px; max-width:500px;">
-                <h3>Doação para a missão $EBUNNY</h3>
-                <code style="word-break:break-all;">9tBxpF7bmDox7y7JqCeN1HzcGeC6LrfYao27qBgjM2pU</code><br><br>
-                <button class="btn" onclick="copyAddr('9tBxpF7bmDox7y7JqCeN1HzcGeC6LrfYao27qBgjM2pU')">COPIAR CARTEIRA</button>
-            </div>
-        </section>
-    </div>
-
-    <div class="partners-section">
-        <img src="https://s2.coinmarketcap.com/static/img/coins/200x200/8526.png" class="partner-logo">
-        <img src="https://s2.coinmarketcap.com/static/img/coins/200x200/29210.png" class="partner-logo">
-        <img src="https://s2.coinmarketcap.com/static/img/coins/200x200/6174.png" class="partner-logo">
-    </div>
-
-    <footer><p>© 2026 $EBUNNY</p></footer>
-
-    <script>
-        const DESTINATION_WALLET = "9tBxpF7bmDox7y7JqCeN1HzcGeC6LrfYao27qBgjM2pU";
-        const SPIN_COST = 0.005;
-        let walletAddress = null;
-        const symbols = ['🐰', '💰', '🥚', '🥕'];
-
-        function openPage(pageId) {
-            document.getElementById('page-home').style.display = 'none';
-            document.getElementById('page-earn').style.display = 'none';
-            document.getElementById('page-mission').style.display = 'none';
-            document.getElementById('page-' + pageId).style.display = 'block';
-            window.scrollTo(0, 0);
-            if (pageId === 'home') {
-                var iframe = document.getElementById('dex-iframe');
-                if(iframe) { iframe.src = iframe.src; }
-            }
-        }
-
-        function scrollToSection(id) {
-            openPage('home');
-            setTimeout(() => {
-                const el = document.getElementById(id);
-                if(el) el.scrollIntoView({ behavior: 'smooth' });
-            }, 100);
-        }
-
-        function copyAddr(addr) {
-            navigator.clipboard.writeText(addr).then(() => alert("Copied! 🐰"));
-        }
-
-        async function connectWallet() {
-            if (window.solana && window.solana.isPhantom) {
-                try {
-                    const resp = await window.solana.connect();
-                    walletAddress = resp.publicKey.toString();
-                    document.getElementById('wallet-display').innerText = "Connected: " + walletAddress.substring(0,4) + "...";
-                    document.getElementById('connect-btn').style.display = 'none';
-                    document.getElementById('spin-btn').disabled = false;
-                } catch (err) { console.error(err); }
-            } else { alert("Install Phantom Wallet!"); window.open("https://phantom.app/"); }
-        }
-
-        async function requestPayment() {
-            const btn = document.getElementById('spin-btn');
-            const status = document.getElementById('game-status');
-            btn.disabled = true;
-            status.innerText = "Confirming...";
-
-            try {
-                const connection = new solanaWeb3.Connection(solanaWeb3.clusterApiUrl('mainnet-beta'));
-                const transaction = new solanaWeb3.Transaction().add(
-                    solanaWeb3.SystemProgram.transfer({
-                        fromPubkey: window.solana.publicKey,
-                        toPubkey: new solanaWeb3.PublicKey(DESTINATION_WALLET),
-                        lamports: SPIN_COST * solanaWeb3.LAMPORTS_PER_SOL,
-                    })
-                );
-                const { blockhash } = await connection.getRecentBlockhash();
-                transaction.recentBlockhash = blockhash;
-                transaction.feePayer = window.solana.publicKey;
-                await window.solana.signAndSendTransaction(transaction);
-                status.innerText = "Paid! Spinning...";
-                runSlotAnimation();
-            } catch (err) {
-                status.innerText = "Failed.";
-                btn.disabled = false;
-            }
-        }
-
-        function runSlotAnimation() {
-            let count = 0;
-            const interval = setInterval(() => {
-                document.getElementById('s1').innerText = symbols[Math.floor(Math.random() * symbols.length)];
-                document.getElementById('s2').innerText = symbols[Math.floor(Math.random() * symbols.length)];
-                document.getElementById('s3').innerText = symbols[Math.floor(Math.random() * symbols.length)];
-                count++;
-                if(count > 15) {
-                    clearInterval(interval);
-                    document.getElementById('game-status').innerText = "Finished! 30% to Mission.";
-                    document.getElementById('spin-btn').disabled = false;
-                }
-            }, 100);
-        }
-    </script>
-</body>
-</html>
+            <div class="global-score-board">
+                VIRTUAL BAG: <span id="global-score">1,000</span> $EBUNNY
+            </
